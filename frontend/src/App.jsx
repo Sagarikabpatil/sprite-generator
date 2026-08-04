@@ -4,6 +4,7 @@ function App() {
   const [image, setImage] = useState(null);
   const [originalImage, setOriginalImage] = useState("");
   const [removedImage, setRemovedImage] = useState("");
+  const [processedImage, setProcessedImage] = useState("");
 
   const uploadImage = async () => {
     if (!image) {
@@ -23,6 +24,7 @@ function App() {
 
     setOriginalImage(data.original);
     setRemovedImage(data.removed);
+    setProcessedImage(data.processed);
   };
 
   return (
@@ -40,16 +42,17 @@ function App() {
 
         <button
           onClick={uploadImage}
-          className="mt-5 px-6 py-3 bg-cyan-500 rounded-lg"
+          className="mt-5 px-6 py-3 bg-cyan-500 rounded-lg hover:bg-cyan-600 transition"
         >
           Upload Image
         </button>
       </div>
 
       {removedImage && (
-        <div className="grid grid-cols-2 gap-10 mt-12">
+        <div className="grid grid-cols-3 gap-10 mt-12">
+          {/* Original Image */}
           <div>
-            <h2 className="text-xl mb-4">Original</h2>
+            <h2 className="text-xl mb-4 text-center">Original</h2>
             <img
               src={originalImage}
               className="rounded-lg shadow-lg"
@@ -57,13 +60,26 @@ function App() {
             />
           </div>
 
+          {/* Background Removed */}
           <div>
-            <h2 className="text-xl mb-4">Background Removed</h2>
+            <h2 className="text-xl mb-4 text-center">Background Removed</h2>
             <div className="bg-gray-200 p-4 rounded-lg">
               <img
                 src={removedImage}
                 className="rounded-lg"
                 alt="Background Removed"
+              />
+            </div>
+          </div>
+
+          {/* Processed Character */}
+          <div>
+            <h2 className="text-xl mb-4 text-center">Processed Character</h2>
+            <div className="bg-gray-200 p-4 rounded-lg flex justify-center">
+              <img
+                src={processedImage}
+                className="rounded-lg"
+                alt="Processed Character"
               />
             </div>
           </div>

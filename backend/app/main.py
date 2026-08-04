@@ -1,9 +1,12 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-import shutil
 import os
-from rembg import remove
+
+try:
+    from app.services.image_service import process_uploaded_image
+except ImportError:
+    from services.image_service import process_uploaded_image
 
 app = FastAPI(
     title="AI Animation Sprite Generator API",
@@ -19,10 +22,13 @@ app.add_middleware(
 )
 
 UPLOAD_FOLDER = "app/uploads"
+PROCESSED_FOLDER = "app/processed"
+
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(PROCESSED_FOLDER, exist_ok=True)
 
 app.mount("/uploads", StaticFiles(directory=UPLOAD_FOLDER), name="uploads")
-
+app.mount("/processed", StaticFiles(directory=PROCESSED_FOLDER), name="processed")
 
 @app.get("/")
 def home():
@@ -36,24 +42,4 @@ def hello():
 
 @app.post("/upload")
 async def upload_image(file: UploadFile = File(...)):
-    file_path = os.path.join(UPLOAD_FOLDER, file.filename)
-
-    with open(file_path, "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
-
-    # Remove background
-    output_filename = f"no_bg_{os.path.splitext(file.filename)[0]}.png"
-    output_path = os.path.join(UPLOAD_FOLDER, output_filename)
-
-    with open(file_path, "rb") as input_file:
-        input_data = input_file.read()
-
-    output_data = remove(input_data)
-
-    with open(output_path, "wb") as output_file:
-        output_file.write(output_data)
-
-    return {
-        "original": f"http://127.0.0.1:8000/uploads/{file.filename}",
-        "removed": f"http://127.0.0.1:8000/uploads/{output_filename}"
-    }
+    return process_uploaded_image(file)
