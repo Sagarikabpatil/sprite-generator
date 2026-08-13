@@ -40,3 +40,14 @@ __pycache__/
 # Uploaded/generated images
 backend/app/uploads/
 backend/app/outputs/
+
+# Dataset training artifacts
+backend/data/raw/
+backend/data/clean/images/
+backend/data/checkpoints/
+backend/data/lora_output/
+
+# Keep metadata and validation artifacts tracked when small
+!backend/data/clean/metadata/
+!backend/data/validation/
+!backend/training/

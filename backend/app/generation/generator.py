@@ -1,60 +1,47 @@
-"""AI image generation module for Stable Diffusion-based sprite creation.
-
-This module is intended to handle the next stage of the application workflow:
- generating images from text prompts using a diffusion model. It is designed as a
- modular placeholder for future integration with a Stable Diffusion backend,
- model loading, image generation, and persistence of generated outputs.
-
-The implementation will be added later as the generation pipeline is developed.
-"""
+"""Application-level logic for generating character images from text prompts."""
 
 from __future__ import annotations
 
-from typing import Any
+from datetime import datetime
+from pathlib import Path
+from uuid import uuid4
+
+from app.generation.pollinations_client import generate_image
+
+GENERATED_FOLDER = Path(__file__).resolve().parents[1] / "generated"
+GENERATED_FOLDER.mkdir(parents=True, exist_ok=True)
 
 
-def load_model() -> Any:
-    """Load the diffusion model once during application startup.
+def generate_character(prompt: str) -> str:
+    """Generate a character image from a text prompt and save it to the app output folder."""
+    if not isinstance(prompt, str) or not prompt.strip():
+        raise ValueError("Prompt cannot be empty.")
 
-    This placeholder function will later initialize the Stable Diffusion model,
-    tokenizer, or pipeline required for image generation. It should be invoked
-    during application startup so the model is loaded only once and reused for
-    subsequent requests.
+    sanitized_prompt = prompt.strip()
 
-    Returns:
-        Any: A model handle or pipeline object once implemented.
-    """
-    pass
+    try:
+        image_bytes, content_type = generate_image(sanitized_prompt)
+    except (ValueError, RuntimeError) as exc:
+        raise exc
+    except Exception as exc:
+        raise RuntimeError(f"Image generation failed: {exc}") from exc
 
+    if not isinstance(image_bytes, (bytes, bytearray)):
+        raise RuntimeError("Pollinations returned no image data.")
 
-def generate_image(prompt: str) -> str:
-    """Generate an image from a text prompt and return the saved image path.
+    extension = ".png"
+    if content_type and content_type.startswith("image/"):
+        extension = "." + content_type.split("/")[-1]
+    elif "jpeg" in content_type.lower():
+        extension = ".jpg"
 
-    This function will eventually accept a text prompt, run the diffusion model,
-    and produce a generated image asset. The returned value should be the file
-    path of the saved image, suitable for downstream processing or API response
-    delivery.
+    timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
+    filename = f"generated_{timestamp}_{uuid4().hex[:8]}{extension}"
+    file_path = GENERATED_FOLDER / filename
 
-    Args:
-        prompt (str): The textual description used to guide image generation.
+    try:
+        file_path.write_bytes(image_bytes)
+    except OSError as exc:
+        raise RuntimeError(f"Failed to save generated image: {exc}") from exc
 
-    Returns:
-        str: The filesystem path to the generated image after saving.
-    """
-    pass
-
-
-def save_generated_image(image: Any) -> str:
-    """Save a generated image inside the application-generated output folder.
-
-    This placeholder function will handle image serialization and persistence to
-    the designated output directory, ensuring generated assets are stored in a
-    predictable location for later retrieval or display.
-
-    Args:
-        image (Any): The generated image object to be saved.
-
-    Returns:
-        str: The path to the saved image file.
-    """
-    pass
+    return filename

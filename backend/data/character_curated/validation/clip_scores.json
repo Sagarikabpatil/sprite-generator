@@ -1,0 +1,2957 @@
+{
+  "summary": {
+    "count": 470,
+    "min": -0.04800848951854278,
+    "max": 0.09994844960243796,
+    "mean": 0.09292290882074412,
+    "median": 0.09897604469471541,
+    "p75": 0.09956059073942025,
+    "p90": 0.09978729784956916,
+    "p95": 0.09984651046313425,
+    "p99": 0.09992062208052038
+  },
+  "top_20": [
+    {
+      "filename": "000467.png",
+      "score": 0.09994844960243796,
+      "negative_object_score": 2.0620256633208102e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000307.png",
+      "score": 0.09994384362384873,
+      "negative_object_score": 2.246247072624404e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000479.png",
+      "score": 0.099941893044335,
+      "negative_object_score": 2.324826546858579e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000117.png",
+      "score": 0.09994178030609456,
+      "negative_object_score": 2.3284744033465663e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000026.png",
+      "score": 0.09992659606614798,
+      "negative_object_score": 2.93621451371943e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000237.png",
+      "score": 0.09991793811596304,
+      "negative_object_score": 3.282236984508321e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000364.png",
+      "score": 0.0999166815813131,
+      "negative_object_score": 3.3330116051881004e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000466.png",
+      "score": 0.09991557699703056,
+      "negative_object_score": 3.377064405564549e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000107.png",
+      "score": 0.09990776001472454,
+      "negative_object_score": 3.6893464090326235e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000218.png",
+      "score": 0.09990726063641281,
+      "negative_object_score": 3.7095450367511754e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000325.png",
+      "score": 0.0999064666746411,
+      "negative_object_score": 3.741779911858127e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000283.png",
+      "score": 0.09989088469218833,
+      "negative_object_score": 4.36481431345707e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000297.png",
+      "score": 0.09988627782009493,
+      "negative_object_score": 4.5491417351210356e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000486.png",
+      "score": 0.09988239184248944,
+      "negative_object_score": 4.704334269642156e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000015.png",
+      "score": 0.09988168170125201,
+      "negative_object_score": 4.7327660697267976e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000133.png",
+      "score": 0.09987315990484452,
+      "negative_object_score": 5.073625606352531e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000144.png",
+      "score": 0.09987303765339561,
+      "negative_object_score": 5.078619031451126e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000059.png",
+      "score": 0.09986753131812709,
+      "negative_object_score": 5.298819163310024e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000086.png",
+      "score": 0.09986534866903488,
+      "negative_object_score": 5.385989360699265e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000016.png",
+      "score": 0.09986358916002776,
+      "negative_object_score": 5.456353165224452e-05,
+      "accepted_by_threshold": true
+    }
+  ],
+  "all_scores": [
+    {
+      "filename": "000001.png",
+      "score": 0.09883936240780714,
+      "negative_object_score": 0.00046425324421761616,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000002.png",
+      "score": 0.09928059801771572,
+      "negative_object_score": 0.0002877588614561925,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000003.png",
+      "score": 0.09420533012950424,
+      "negative_object_score": 0.0023178634664266914,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000004.png",
+      "score": 0.09644552690612423,
+      "negative_object_score": 0.0014217881177804278,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000005.png",
+      "score": 0.09436720986414002,
+      "negative_object_score": 0.002253118121006992,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000006.png",
+      "score": 0.09227764927442574,
+      "negative_object_score": 0.0030889372840950577,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000007.png",
+      "score": 0.09932773845742608,
+      "negative_object_score": 0.0002689102975333905,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000008.png",
+      "score": 0.0995966812845154,
+      "negative_object_score": 0.00016132768485022098,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000009.png",
+      "score": 0.09975932144448052,
+      "negative_object_score": 9.627359827391047e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000010.png",
+      "score": 0.0993520922332209,
+      "negative_object_score": 0.0002591637939076463,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000011.png",
+      "score": 0.09767319954038006,
+      "negative_object_score": 0.0009307167296962386,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000012.png",
+      "score": 0.06746816271624993,
+      "negative_object_score": 0.013012731549679302,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000013.png",
+      "score": 0.09900819582495236,
+      "negative_object_score": 0.00039671921889900355,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000014.png",
+      "score": 0.08172822268291687,
+      "negative_object_score": 0.007308711356987866,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000015.png",
+      "score": 0.09988168170125201,
+      "negative_object_score": 4.7327660697267976e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000016.png",
+      "score": 0.09986358916002776,
+      "negative_object_score": 5.456353165224452e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000017.png",
+      "score": 0.09962229089191321,
+      "negative_object_score": 0.00015108397152137817,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000018.png",
+      "score": 0.09953260726197945,
+      "negative_object_score": 0.00018695114394328509,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000019.png",
+      "score": 0.09902388453483582,
+      "negative_object_score": 0.00039044360746629534,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000020.png",
+      "score": 0.09970850996704334,
+      "negative_object_score": 0.00011659485445913257,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000021.png",
+      "score": 0.0990299847959856,
+      "negative_object_score": 0.0003880039009648802,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000022.png",
+      "score": 0.09939351448538218,
+      "negative_object_score": 0.00024259818037535296,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000023.png",
+      "score": 0.09960622172040985,
+      "negative_object_score": 0.00015751378557524732,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000024.png",
+      "score": 0.09811363392115406,
+      "negative_object_score": 0.0007545514275382933,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000025.png",
+      "score": 0.09927638479821325,
+      "negative_object_score": 0.00028944103432877456,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000026.png",
+      "score": 0.09992659606614798,
+      "negative_object_score": 2.93621451371943e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000027.png",
+      "score": 0.04404017822331904,
+      "negative_object_score": 0.02238393174969436,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000028.png",
+      "score": 0.09977922109317963,
+      "negative_object_score": 8.831101223828833e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000029.png",
+      "score": 0.09956825454681849,
+      "negative_object_score": 0.00017269432465809585,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000030.png",
+      "score": 0.08661884190369164,
+      "negative_object_score": 0.0053524692208156924,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000033.png",
+      "score": 0.09943437535323105,
+      "negative_object_score": 0.0002262459566547174,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000034.png",
+      "score": 0.0992985862658467,
+      "negative_object_score": 0.0002805677735371622,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000035.png",
+      "score": 0.0997721196477111,
+      "negative_object_score": 9.114841185085728e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000036.png",
+      "score": 0.09739276192443262,
+      "negative_object_score": 0.001042897540598157,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000037.png",
+      "score": -0.003270922834053634,
+      "negative_object_score": 0.04130837185075507,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000038.png",
+      "score": 0.09820376363798763,
+      "negative_object_score": 0.0007184956352527176,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000040.png",
+      "score": 0.09980033265244023,
+      "negative_object_score": 7.986773337430956e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000042.png",
+      "score": 0.09969260425110255,
+      "negative_object_score": 0.00012295686487201845,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000043.png",
+      "score": 0.09923321427275672,
+      "negative_object_score": 0.00030671415071689505,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000044.png",
+      "score": 0.09768183107686733,
+      "negative_object_score": 0.0009272635650025526,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000045.png",
+      "score": 0.07379191585447795,
+      "negative_object_score": 0.01048322936888629,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000046.png",
+      "score": 0.09566859369854985,
+      "negative_object_score": 0.001732564696673459,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000047.png",
+      "score": 0.09935305925506933,
+      "negative_object_score": 0.00025877735273146146,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000048.png",
+      "score": 0.09828468982107855,
+      "negative_object_score": 0.0006861208724937266,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000049.png",
+      "score": 0.09903493822359904,
+      "negative_object_score": 0.00038602583069859977,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000050.png",
+      "score": 0.05642435318004573,
+      "negative_object_score": 0.017430257446540053,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000051.png",
+      "score": 0.09786864512207104,
+      "negative_object_score": 0.0008525354489393067,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000052.png",
+      "score": 0.09977920007088226,
+      "negative_object_score": 8.83202969608495e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000053.png",
+      "score": 0.0968403989472184,
+      "negative_object_score": 0.001263840796915853,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000054.png",
+      "score": 0.09876022253294346,
+      "negative_object_score": 0.0004959107784846613,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000055.png",
+      "score": 0.09981095480525634,
+      "negative_object_score": 7.562014015623693e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000056.png",
+      "score": 0.09932903314843315,
+      "negative_object_score": 0.0002683897553197312,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000057.png",
+      "score": 0.09910027765581617,
+      "negative_object_score": 0.0003598885246901773,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000058.png",
+      "score": 0.09826829445364638,
+      "negative_object_score": 0.0006926805684088321,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000059.png",
+      "score": 0.09986753131812709,
+      "negative_object_score": 5.298819163310024e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000060.png",
+      "score": 0.09874660107331389,
+      "negative_object_score": 0.0005013552550129437,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000061.png",
+      "score": 0.0996903254402999,
+      "negative_object_score": 0.00012387002499660108,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000062.png",
+      "score": 0.09957927748027183,
+      "negative_object_score": 0.00016829157549030544,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000063.png",
+      "score": 0.09900698524761538,
+      "negative_object_score": 0.00039720618769933935,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000064.png",
+      "score": 0.09940322026031935,
+      "negative_object_score": 0.00023870857312431327,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000065.png",
+      "score": 0.09985399710352946,
+      "negative_object_score": 5.839571600366374e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000066.png",
+      "score": 0.09607223614057148,
+      "negative_object_score": 0.0015711046484284453,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000067.png",
+      "score": 0.09914333954807263,
+      "negative_object_score": 0.00034266171855961146,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000068.png",
+      "score": 0.0980974443701598,
+      "negative_object_score": 0.0007610249936078617,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000069.png",
+      "score": 0.09660628194695467,
+      "negative_object_score": 0.0013574883195512182,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000070.png",
+      "score": 0.09654848105807712,
+      "negative_object_score": 0.0013806078180399102,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000071.png",
+      "score": 0.0997197280222887,
+      "negative_object_score": 0.00011210597952716246,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000072.png",
+      "score": 0.023316730560812477,
+      "negative_object_score": 0.030673307225030536,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000073.png",
+      "score": 0.029500190098769967,
+      "negative_object_score": 0.02819992755539715,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000074.png",
+      "score": 0.09917980972283355,
+      "negative_object_score": 0.00032807466444258654,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000075.png",
+      "score": 0.05642349613287176,
+      "negative_object_score": 0.01743060154452299,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000076.png",
+      "score": 0.09278932559730796,
+      "negative_object_score": 0.002884274425256687,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000077.png",
+      "score": 0.09113351989265842,
+      "negative_object_score": 0.0035465953270128617,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000078.png",
+      "score": 0.09765634208294312,
+      "negative_object_score": 0.0009374677423087027,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000079.png",
+      "score": 0.009897667161809898,
+      "negative_object_score": 0.03604093500956272,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000081.png",
+      "score": 0.09756279583422535,
+      "negative_object_score": 0.0009748819381760162,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000082.png",
+      "score": 0.09198862745494504,
+      "negative_object_score": 0.003204545456295212,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000083.png",
+      "score": 0.09698307299901596,
+      "negative_object_score": 0.0012067700017117508,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000084.png",
+      "score": 0.09730392499656469,
+      "negative_object_score": 0.0010784310998436315,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000085.png",
+      "score": 0.09815872521374634,
+      "negative_object_score": 0.000736509488175822,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000086.png",
+      "score": 0.09986534866903488,
+      "negative_object_score": 5.385989360699265e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000087.png",
+      "score": 0.09781624259355036,
+      "negative_object_score": 0.0008735027613814357,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000088.png",
+      "score": 0.09926942244587736,
+      "negative_object_score": 0.000292233651771312,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000089.png",
+      "score": 0.06098077299053936,
+      "negative_object_score": 0.01560769255059616,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000090.png",
+      "score": 0.099498497461506,
+      "negative_object_score": 0.0002006034079689319,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000091.png",
+      "score": 0.09925791740926494,
+      "negative_object_score": 0.0002968296020147439,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000092.png",
+      "score": 0.09930325043389986,
+      "negative_object_score": 0.0002787030185345429,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000093.png",
+      "score": -0.03719252194568981,
+      "negative_object_score": 0.05487700602388941,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000094.png",
+      "score": 0.09919654442170062,
+      "negative_object_score": 0.0003213821345904459,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000096.png",
+      "score": 0.09913001148840976,
+      "negative_object_score": 0.00034800011319475744,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000097.png",
+      "score": 0.011446606942627113,
+      "negative_object_score": 0.03542135803290876,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000098.png",
+      "score": 0.09906461728616402,
+      "negative_object_score": 0.00037415097820788407,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000099.png",
+      "score": 0.0982219962702402,
+      "negative_object_score": 0.0007112020327440405,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000100.png",
+      "score": 0.09964278561343841,
+      "negative_object_score": 0.0001428823645558926,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000101.png",
+      "score": 0.09982583811074998,
+      "negative_object_score": 6.966458745030954e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000102.png",
+      "score": 0.09833807245746963,
+      "negative_object_score": 0.000664772569083046,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000103.png",
+      "score": 0.0992055163738769,
+      "negative_object_score": 0.00031779157961864257,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000104.png",
+      "score": 0.0983162677380733,
+      "negative_object_score": 0.0006734933413554244,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000105.png",
+      "score": 0.09964471504344298,
+      "negative_object_score": 0.00014211240205289262,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000106.png",
+      "score": 0.08205076991580428,
+      "negative_object_score": 0.007179687824100256,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000107.png",
+      "score": 0.09990776001472454,
+      "negative_object_score": 3.6893464090326235e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000108.png",
+      "score": 0.09890909929720995,
+      "negative_object_score": 0.00043635567805419366,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000109.png",
+      "score": 0.0962920647211528,
+      "negative_object_score": 0.0014831730009367068,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000110.png",
+      "score": 0.07656870990758763,
+      "negative_object_score": 0.009372509934473782,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000111.png",
+      "score": 0.09855055606288564,
+      "negative_object_score": 0.0005797782871619953,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000112.png",
+      "score": 0.09952952540152371,
+      "negative_object_score": 0.00018818581629413225,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000114.png",
+      "score": 0.09484086064179185,
+      "negative_object_score": 0.002063661841445234,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000115.png",
+      "score": 0.09960894451661867,
+      "negative_object_score": 0.00015641971247835803,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000116.png",
+      "score": 0.09469507713171575,
+      "negative_object_score": 0.002121968882177801,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000117.png",
+      "score": 0.09994178030609456,
+      "negative_object_score": 2.3284744033465663e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000118.png",
+      "score": 0.09849561264626723,
+      "negative_object_score": 0.0006017488857726979,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000119.png",
+      "score": 0.09984219240399549,
+      "negative_object_score": 6.31217877147113e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000120.png",
+      "score": 0.09937887350862033,
+      "negative_object_score": 0.00024845261176930457,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000121.png",
+      "score": 0.09781925411251298,
+      "negative_object_score": 0.0008722986543186077,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000122.png",
+      "score": -0.019905141668277792,
+      "negative_object_score": 0.04796205808816012,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000124.png",
+      "score": 0.09961651150024409,
+      "negative_object_score": 0.00015339404690166701,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000125.png",
+      "score": 0.098703047065131,
+      "negative_object_score": 0.0005187806067321314,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000126.png",
+      "score": 0.09803613217833725,
+      "negative_object_score": 0.0007855451707049118,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000127.png",
+      "score": 0.09968973012890577,
+      "negative_object_score": 0.00012410633773167015,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000128.png",
+      "score": 0.09856043517290043,
+      "negative_object_score": 0.0005758265563902872,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000129.png",
+      "score": 0.09917558330783625,
+      "negative_object_score": 0.0003297680799429751,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000130.png",
+      "score": 0.09591564659203869,
+      "negative_object_score": 0.0016337386827217416,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000131.png",
+      "score": 0.09901174006614989,
+      "negative_object_score": 0.0003953066353763764,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000132.png",
+      "score": 0.035782118717907,
+      "negative_object_score": 0.025687149801524357,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000133.png",
+      "score": 0.09987315990484452,
+      "negative_object_score": 5.073625606352531e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000135.png",
+      "score": 0.09939902090780682,
+      "negative_object_score": 0.00024039283081644195,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000137.png",
+      "score": 0.09959057396907459,
+      "negative_object_score": 0.00016377216390234633,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000138.png",
+      "score": 0.09875776740855145,
+      "negative_object_score": 0.0004968942254890863,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000139.png",
+      "score": 0.09966042722359512,
+      "negative_object_score": 0.0001358275928699489,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000140.png",
+      "score": 0.09783934974389012,
+      "negative_object_score": 0.0008642584901735973,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000141.png",
+      "score": 0.0993725889225819,
+      "negative_object_score": 0.00025096306546098883,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000142.png",
+      "score": 0.09929174080114839,
+      "negative_object_score": 0.000283304496239604,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000143.png",
+      "score": 0.09154749898856002,
+      "negative_object_score": 0.0033810007519302116,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000144.png",
+      "score": 0.09987303765339561,
+      "negative_object_score": 5.078619031451126e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000145.png",
+      "score": 0.09550050675958724,
+      "negative_object_score": 0.0017997972006317771,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000146.png",
+      "score": 0.09952059304843411,
+      "negative_object_score": 0.00019176494177675825,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000147.png",
+      "score": 0.09976529951884837,
+      "negative_object_score": 9.38829915601976e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000148.png",
+      "score": 0.0981629131087781,
+      "negative_object_score": 0.0007348354947074161,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000149.png",
+      "score": 0.09736343362637855,
+      "negative_object_score": 0.001054628658675938,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000150.png",
+      "score": 0.08085825409240595,
+      "negative_object_score": 0.0076566946603027946,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000151.png",
+      "score": 0.09827567481537093,
+      "negative_object_score": 0.0006897304907094319,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000152.png",
+      "score": 0.0961439156333654,
+      "negative_object_score": 0.001542436761155841,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000153.png",
+      "score": 0.0518744475460456,
+      "negative_object_score": 0.019250223632358635,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000154.png",
+      "score": 0.09982198391066201,
+      "negative_object_score": 7.12038441254966e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000155.png",
+      "score": 0.09918598324102276,
+      "negative_object_score": 0.00032561003654336674,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000156.png",
+      "score": 0.09924663188788448,
+      "negative_object_score": 0.00030134904742832685,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000157.png",
+      "score": 0.0997659598831054,
+      "negative_object_score": 9.361470828631961e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000159.png",
+      "score": 0.09535387103508887,
+      "negative_object_score": 0.0018584502062973722,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000160.png",
+      "score": 0.09737604589145121,
+      "negative_object_score": 0.001049585042619583,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000162.png",
+      "score": 0.08849601828502879,
+      "negative_object_score": 0.004601591869626039,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000163.png",
+      "score": 0.09905442301105723,
+      "negative_object_score": 0.0003782301077990269,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000164.png",
+      "score": 0.09892291113137616,
+      "negative_object_score": 0.00043083656564704145,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000165.png",
+      "score": 0.09808563744698708,
+      "negative_object_score": 0.0007657472644647593,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000166.png",
+      "score": 0.07934411189780803,
+      "negative_object_score": 0.00826235536223976,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000167.png",
+      "score": 0.09820945914355737,
+      "negative_object_score": 0.0007162164420757715,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000168.png",
+      "score": 0.09975739633913085,
+      "negative_object_score": 9.704191512961794e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000169.png",
+      "score": 0.09912374749695421,
+      "negative_object_score": 0.0003505025859036929,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000170.png",
+      "score": 0.09935209219138415,
+      "negative_object_score": 0.00025916170534401317,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000171.png",
+      "score": 0.09749709741948512,
+      "negative_object_score": 0.001001158310888665,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000172.png",
+      "score": 0.09581950576445403,
+      "negative_object_score": 0.0016721953167082879,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000173.png",
+      "score": 0.09691538595604167,
+      "negative_object_score": 0.0012338448175190327,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000174.png",
+      "score": 0.09984714979585002,
+      "negative_object_score": 6.114356362634984e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000175.png",
+      "score": -0.01701612119504716,
+      "negative_object_score": 0.04680645040352829,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000176.png",
+      "score": 0.0990220791776816,
+      "negative_object_score": 0.00039116707556180095,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000177.png",
+      "score": 0.09938926033330518,
+      "negative_object_score": 0.00024429100474208096,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000178.png",
+      "score": 0.09810239878112649,
+      "negative_object_score": 0.000759041251361244,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000180.png",
+      "score": 0.08788895567946989,
+      "negative_object_score": 0.004844413634176211,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000181.png",
+      "score": 0.09753699675196306,
+      "negative_object_score": 0.0009852022282454225,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000182.png",
+      "score": 0.09672165321693077,
+      "negative_object_score": 0.0013113401872639466,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000183.png",
+      "score": 0.09984657812448555,
+      "negative_object_score": 6.136856689712053e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000184.png",
+      "score": 0.0983382445548159,
+      "negative_object_score": 0.0006647028357292583,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000185.png",
+      "score": 0.09970126089839748,
+      "negative_object_score": 0.0001194937059002162,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000186.png",
+      "score": 0.09965284455676814,
+      "negative_object_score": 0.000138863411920435,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000187.png",
+      "score": 0.09951582431476709,
+      "negative_object_score": 0.0001936717881108052,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000188.png",
+      "score": 0.08211562861106358,
+      "negative_object_score": 0.007153746538097039,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000189.png",
+      "score": 0.0830746645554124,
+      "negative_object_score": 0.006770128944966322,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000190.png",
+      "score": 0.09605309958787984,
+      "negative_object_score": 0.0015787578297022265,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000191.png",
+      "score": 0.09837466930515197,
+      "negative_object_score": 0.0006501295119657395,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000192.png",
+      "score": 0.0993849490526145,
+      "negative_object_score": 0.0002460222468698703,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000193.png",
+      "score": 0.08598010401425805,
+      "negative_object_score": 0.005607959151287408,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000194.png",
+      "score": 0.09981669742474726,
+      "negative_object_score": 7.332154427028096e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000195.png",
+      "score": 0.09960334901402347,
+      "negative_object_score": 0.00015865646132624535,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000196.png",
+      "score": 0.09973067260645886,
+      "negative_object_score": 0.00010773011824956787,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000197.png",
+      "score": 0.09936591292909801,
+      "negative_object_score": 0.0002536376780691777,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000198.png",
+      "score": 0.09882280014850646,
+      "negative_object_score": 0.0004708755296936336,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000199.png",
+      "score": 0.09968756720435484,
+      "negative_object_score": 0.00012497644102988186,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000200.png",
+      "score": 0.09930540095310031,
+      "negative_object_score": 0.0002778392757212108,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000201.png",
+      "score": 0.09983080204369799,
+      "negative_object_score": 6.767932095499418e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000202.png",
+      "score": 0.09887203508924358,
+      "negative_object_score": 0.0004511836049459816,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000203.png",
+      "score": 0.09925452867316077,
+      "negative_object_score": 0.0002981875484996029,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000204.png",
+      "score": 0.09923593092573053,
+      "negative_object_score": 0.0003056244746251953,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000205.png",
+      "score": 0.09794986196217602,
+      "negative_object_score": 0.0008200560928647367,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000206.png",
+      "score": 0.09570018039509401,
+      "negative_object_score": 0.0017199238516089584,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000207.png",
+      "score": 0.099342807255213,
+      "negative_object_score": 0.00026288108109232173,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000208.png",
+      "score": 0.09718074570658548,
+      "negative_object_score": 0.0011277067042707737,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000209.png",
+      "score": 0.0993116331856072,
+      "negative_object_score": 0.0002753492399278912,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000210.png",
+      "score": 0.09959298101025525,
+      "negative_object_score": 0.00016280602717415603,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000211.png",
+      "score": 0.09921207118011352,
+      "negative_object_score": 0.0003151652899077817,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000212.png",
+      "score": 0.09979219693894568,
+      "negative_object_score": 8.312075544078349e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000213.png",
+      "score": 0.09964106845379775,
+      "negative_object_score": 0.00014357101811128813,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000214.png",
+      "score": 0.07931438171848035,
+      "negative_object_score": 0.008274248339391003,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000215.png",
+      "score": 0.09932357786541009,
+      "negative_object_score": 0.00027056765890544435,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000216.png",
+      "score": 0.09823674422210994,
+      "negative_object_score": 0.0007053048176506612,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000217.png",
+      "score": 0.09917874308738041,
+      "negative_object_score": 0.00032850633289550993,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000218.png",
+      "score": 0.09990726063641281,
+      "negative_object_score": 3.7095450367511754e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000219.png",
+      "score": 0.09961182769808753,
+      "negative_object_score": 0.00015527130702442567,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000220.png",
+      "score": 0.09900525354405544,
+      "negative_object_score": 0.00039789561615179994,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000221.png",
+      "score": 0.09886344663715742,
+      "negative_object_score": 0.0004546238193446091,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000222.png",
+      "score": 0.09928474786682576,
+      "negative_object_score": 0.0002861035744141797,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000223.png",
+      "score": 0.09923742103053428,
+      "negative_object_score": 0.0003050322695571595,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000225.png",
+      "score": 0.04313069071698314,
+      "negative_object_score": 0.02274772327315683,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000226.png",
+      "score": 0.06482984427905952,
+      "negative_object_score": 0.014068060279047738,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000227.png",
+      "score": 0.09133505021782184,
+      "negative_object_score": 0.0034659788627322994,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000228.png",
+      "score": 0.0986976444288075,
+      "negative_object_score": 0.0005209431718185443,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000229.png",
+      "score": 0.0987393833720489,
+      "negative_object_score": 0.0005042477312599658,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000230.png",
+      "score": 0.09956087528606379,
+      "negative_object_score": 0.00017565149702628938,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000231.png",
+      "score": 0.09425556432236894,
+      "negative_object_score": 0.0022977767673789157,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000232.png",
+      "score": 0.09458359492600721,
+      "negative_object_score": 0.0021665619115083246,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000233.png",
+      "score": 0.09607919774158898,
+      "negative_object_score": 0.0015683217146336876,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000234.png",
+      "score": 0.09945840075572884,
+      "negative_object_score": 0.00021663741306004642,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000235.png",
+      "score": 0.08977706522879694,
+      "negative_object_score": 0.004089172198776699,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000236.png",
+      "score": 0.09962484544001124,
+      "negative_object_score": 0.00015005861943867178,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000237.png",
+      "score": 0.09991793811596304,
+      "negative_object_score": 3.282236984508321e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000238.png",
+      "score": 0.09896366129505622,
+      "negative_object_score": 0.00041453571066085715,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000239.png",
+      "score": 0.09612943127770752,
+      "negative_object_score": 0.001548229362621593,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000240.png",
+      "score": 0.09838838194894682,
+      "negative_object_score": 0.000644649285338043,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000241.png",
+      "score": 0.09969998578043639,
+      "negative_object_score": 0.000120004012304283,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000243.png",
+      "score": 0.0973500120722747,
+      "negative_object_score": 0.0010599925612041262,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000244.png",
+      "score": 0.09892308461620208,
+      "negative_object_score": 0.0004307669305641563,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000245.png",
+      "score": 0.09983752671187555,
+      "negative_object_score": 6.499248765597561e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000246.png",
+      "score": 0.09825366850391219,
+      "negative_object_score": 0.0006985299961343117,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000247.png",
+      "score": 0.09963372276710818,
+      "negative_object_score": 0.00014651529759627616,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000248.png",
+      "score": 0.09763854599241313,
+      "negative_object_score": 0.0009445809313547215,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000249.png",
+      "score": 0.0989748747479401,
+      "negative_object_score": 0.0004100472915221568,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000251.png",
+      "score": 0.0043829764937981935,
+      "negative_object_score": 0.03824681186815724,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000252.png",
+      "score": 0.09771079097269346,
+      "negative_object_score": 0.0009156802217451817,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000253.png",
+      "score": 0.0993818706329004,
+      "negative_object_score": 0.0002472501169866822,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000254.png",
+      "score": 0.0990749502246975,
+      "negative_object_score": 0.00037002056070984204,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000255.png",
+      "score": 0.09974418501265253,
+      "negative_object_score": 0.00010232607705612888,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000256.png",
+      "score": 0.09983533049078043,
+      "negative_object_score": 6.586418760624231e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000257.png",
+      "score": 0.09751186860609475,
+      "negative_object_score": 0.0009952499158619806,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000258.png",
+      "score": 0.0996868806918125,
+      "negative_object_score": 0.00012524923680151307,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000259.png",
+      "score": 0.097677301420966,
+      "negative_object_score": 0.0009290789802131864,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000260.png",
+      "score": 0.09854664374341458,
+      "negative_object_score": 0.0005813434190865034,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000261.png",
+      "score": 0.09821613692589987,
+      "negative_object_score": 0.0007135410592430465,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000262.png",
+      "score": 0.09956575400896478,
+      "negative_object_score": 0.00017369571256343382,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000263.png",
+      "score": 0.09925434755906887,
+      "negative_object_score": 0.0002982611064756687,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000264.png",
+      "score": 0.09944862162080881,
+      "negative_object_score": 0.00022054750154438808,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000265.png",
+      "score": 0.09925821413548495,
+      "negative_object_score": 0.0002967162313818032,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000266.png",
+      "score": 0.08679341428287445,
+      "negative_object_score": 0.005282633139722747,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000267.png",
+      "score": 0.0991064394433124,
+      "negative_object_score": 0.00035742577583732784,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000268.png",
+      "score": 0.09908232050991804,
+      "negative_object_score": 0.00036707580394856144,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000269.png",
+      "score": 0.09938065716811859,
+      "negative_object_score": 0.00024773815715282884,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000270.png",
+      "score": 0.09726337375207852,
+      "negative_object_score": 0.0010946467224736505,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000271.png",
+      "score": 0.09657952708948869,
+      "negative_object_score": 0.0013681859680218622,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000272.png",
+      "score": 0.09972818029090907,
+      "negative_object_score": 0.00010872760576982424,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000273.png",
+      "score": 0.09847955068732213,
+      "negative_object_score": 0.0006081791939626176,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000274.png",
+      "score": 0.09959121287723367,
+      "negative_object_score": 0.000163516433864667,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000275.png",
+      "score": 0.09949966656185628,
+      "negative_object_score": 0.0002001325114216949,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000276.png",
+      "score": 0.09899349151182832,
+      "negative_object_score": 0.0004026076674563228,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000277.png",
+      "score": 0.09892667234372159,
+      "negative_object_score": 0.00042933235389834107,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000278.png",
+      "score": 0.0986756944035733,
+      "negative_object_score": 0.0005297190222336212,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000279.png",
+      "score": 0.09947343564031902,
+      "negative_object_score": 0.00021062387481075954,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000280.png",
+      "score": 0.09739708716851965,
+      "negative_object_score": 0.001041162586898281,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000282.png",
+      "score": 0.09957944695151279,
+      "negative_object_score": 0.00016822210210042007,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000283.png",
+      "score": 0.09989088469218833,
+      "negative_object_score": 4.36481431345707e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000284.png",
+      "score": 0.09966138387104592,
+      "negative_object_score": 0.00013544343522653435,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000285.png",
+      "score": 0.08761232676139723,
+      "negative_object_score": 0.004955068657485147,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000286.png",
+      "score": 0.07989198139936585,
+      "negative_object_score": 0.008043207432395623,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000287.png",
+      "score": 0.09983160906726121,
+      "negative_object_score": 6.735618204250689e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000288.png",
+      "score": 0.09941247522233425,
+      "negative_object_score": 0.00023500998345298284,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000289.png",
+      "score": 0.09981566901379513,
+      "negative_object_score": 7.373696597975746e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000290.png",
+      "score": 0.09955267366027934,
+      "negative_object_score": 0.00017892852768757923,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000292.png",
+      "score": 0.09502051127783488,
+      "negative_object_score": 0.0019917950296076013,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000293.png",
+      "score": 0.09775085357869102,
+      "negative_object_score": 0.0008996611835755175,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000294.png",
+      "score": 0.09925933621522441,
+      "negative_object_score": 0.00029626337530620127,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000295.png",
+      "score": 0.09921542620374264,
+      "negative_object_score": 0.0003138253049049429,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000296.png",
+      "score": 0.09858251298968146,
+      "negative_object_score": 0.0005669962589915182,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000297.png",
+      "score": 0.09988627782009493,
+      "negative_object_score": 4.5491417351210356e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000298.png",
+      "score": 0.09861362654482946,
+      "negative_object_score": 0.0005545423715375364,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000299.png",
+      "score": 0.09777604780683759,
+      "negative_object_score": 0.0008895794133422896,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000300.png",
+      "score": 0.09694742845783064,
+      "negative_object_score": 0.0012210278288269669,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000301.png",
+      "score": 0.09951351830909895,
+      "negative_object_score": 0.0001945949834824508,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000302.png",
+      "score": 0.09814533973598524,
+      "negative_object_score": 0.0007418593284986249,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000303.png",
+      "score": 0.09930675162828873,
+      "negative_object_score": 0.00027730334189376055,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000304.png",
+      "score": 0.09941475918604586,
+      "negative_object_score": 0.00023409693530235625,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000305.png",
+      "score": 0.09950521425783639,
+      "negative_object_score": 0.0001979121137689314,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000306.png",
+      "score": 0.0992063614382611,
+      "negative_object_score": 0.0003174546739349656,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000307.png",
+      "score": 0.09994384362384873,
+      "negative_object_score": 2.246247072624404e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000308.png",
+      "score": 0.09898448851243605,
+      "negative_object_score": 0.0004062049504833946,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000309.png",
+      "score": 0.09960519497746342,
+      "negative_object_score": 0.0001579179626636081,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000310.png",
+      "score": 0.09514138038090703,
+      "negative_object_score": 0.0019434487488373027,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000311.png",
+      "score": 0.09275826559096458,
+      "negative_object_score": 0.0028966932273760903,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000312.png",
+      "score": 0.09979348573494538,
+      "negative_object_score": 8.26072214560251e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000313.png",
+      "score": 0.053240845696806594,
+      "negative_object_score": 0.018703660589138357,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000314.png",
+      "score": 0.09984642776592711,
+      "negative_object_score": 6.142863082156206e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000315.png",
+      "score": 0.09873468185948393,
+      "negative_object_score": 0.0005061286577377663,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000316.png",
+      "score": 0.09490087377892754,
+      "negative_object_score": 0.0020396480354672045,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000317.png",
+      "score": 0.09963303598445539,
+      "negative_object_score": 0.00014678775629969703,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000318.png",
+      "score": 0.09573080840176165,
+      "negative_object_score": 0.001707672640865591,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000319.png",
+      "score": 0.09502968969318316,
+      "negative_object_score": 0.00198812192393234,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000320.png",
+      "score": 0.09913774381232467,
+      "negative_object_score": 0.00034490296136103403,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000321.png",
+      "score": 0.08387077924368593,
+      "negative_object_score": 0.006451682247764741,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000322.png",
+      "score": 0.0985588330505531,
+      "negative_object_score": 0.0005764656067943481,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000323.png",
+      "score": 0.09954806589106512,
+      "negative_object_score": 0.00018077297842182815,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000324.png",
+      "score": 0.09797401060341145,
+      "negative_object_score": 0.0008103969333205896,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000325.png",
+      "score": 0.0999064666746411,
+      "negative_object_score": 3.741779911858127e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000326.png",
+      "score": 0.09816711328533832,
+      "negative_object_score": 0.0007331491906067337,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000327.png",
+      "score": 0.09810285279951737,
+      "negative_object_score": 0.0007588624329703937,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000328.png",
+      "score": 0.0984544614138637,
+      "negative_object_score": 0.0006182168103199122,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000329.png",
+      "score": 0.09984598876283902,
+      "negative_object_score": 6.16072011932071e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000330.png",
+      "score": 0.09964912487727512,
+      "negative_object_score": 0.0001403507810512868,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000331.png",
+      "score": 0.09966450332968482,
+      "negative_object_score": 0.00013419929354464936,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000332.png",
+      "score": 0.08050801130739274,
+      "negative_object_score": 0.007796797940682154,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000333.png",
+      "score": 0.09948425950343184,
+      "negative_object_score": 0.00020629253494159155,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000334.png",
+      "score": 0.09955739665563215,
+      "negative_object_score": 0.00017704033418795007,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000335.png",
+      "score": 0.09845963806510553,
+      "negative_object_score": 0.0006161446646729019,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000336.png",
+      "score": 0.099590481797433,
+      "negative_object_score": 0.00016380733714716674,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000338.png",
+      "score": 0.09839662384157842,
+      "negative_object_score": 0.0006413511614330976,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000339.png",
+      "score": 0.09816637738849748,
+      "negative_object_score": 0.0007334488210290147,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000340.png",
+      "score": 0.09965171638067054,
+      "negative_object_score": 0.00013931485702111483,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000341.png",
+      "score": 0.0989321401221711,
+      "negative_object_score": 0.0004271480601422203,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000342.png",
+      "score": 0.09960985592531794,
+      "negative_object_score": 0.0001560585495288554,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000343.png",
+      "score": 0.09841763985587022,
+      "negative_object_score": 0.0006329452315185335,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000344.png",
+      "score": 0.09913468391212821,
+      "negative_object_score": 0.0003461280338494059,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000345.png",
+      "score": 0.0956370139663098,
+      "negative_object_score": 0.001745191804972516,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000346.png",
+      "score": 0.09908147592492848,
+      "negative_object_score": 0.0003674094944775182,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000347.png",
+      "score": 0.09917951432136457,
+      "negative_object_score": 0.0003281978672778981,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000349.png",
+      "score": 0.09638920141054162,
+      "negative_object_score": 0.0014443232803993547,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000350.png",
+      "score": 0.09835936788504114,
+      "negative_object_score": 0.000656254278965207,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000351.png",
+      "score": 0.09864696161127995,
+      "negative_object_score": 0.0005412180511711994,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000352.png",
+      "score": 0.09673261012151974,
+      "negative_object_score": 0.0013069575469368524,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000353.png",
+      "score": 0.09448045056827443,
+      "negative_object_score": 0.0022078217642653424,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000354.png",
+      "score": 0.09855465844813505,
+      "negative_object_score": 0.0005781366831646059,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000355.png",
+      "score": 0.09959534772288521,
+      "negative_object_score": 0.0001618613917287348,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000357.png",
+      "score": 0.0986016295909091,
+      "negative_object_score": 0.0005593463690577968,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000358.png",
+      "score": 0.09985577289548928,
+      "negative_object_score": 5.769016211161215e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000359.png",
+      "score": 0.09754337357999249,
+      "negative_object_score": 0.0009826468175560877,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000360.png",
+      "score": 0.09956850356706658,
+      "negative_object_score": 0.00017260400177671425,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000361.png",
+      "score": 0.04512804548430722,
+      "negative_object_score": 0.02194878207810689,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000362.png",
+      "score": 0.09821941306090592,
+      "negative_object_score": 0.0007122381290173508,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000363.png",
+      "score": -0.04800848951854278,
+      "negative_object_score": 0.059203395727672616,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000364.png",
+      "score": 0.0999166815813131,
+      "negative_object_score": 3.3330116051881004e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000365.png",
+      "score": 0.09808920841313314,
+      "negative_object_score": 0.0007643167104257979,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000366.png",
+      "score": 0.0997867535063051,
+      "negative_object_score": 8.529769638698781e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000367.png",
+      "score": 0.09927289921214044,
+      "negative_object_score": 0.00029083991068243147,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000368.png",
+      "score": 0.09631909439121955,
+      "negative_object_score": 0.0014723631691595073,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000369.png",
+      "score": 0.08948398821145626,
+      "negative_object_score": 0.004206401567474435,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000370.png",
+      "score": 0.09980554580174233,
+      "negative_object_score": 7.778183503811912e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000371.png",
+      "score": 0.09960530582269106,
+      "negative_object_score": 0.00015787750504993406,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000372.png",
+      "score": 0.09801463724967713,
+      "negative_object_score": 0.0007941476496246953,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000373.png",
+      "score": 0.09946241132235324,
+      "negative_object_score": 0.00021503225765021246,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000374.png",
+      "score": 0.09829049740546907,
+      "negative_object_score": 0.0006838043944298988,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000375.png",
+      "score": 0.09897721464149072,
+      "negative_object_score": 0.00040911784817581064,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000376.png",
+      "score": 0.09347927559598854,
+      "negative_object_score": 0.0026082860565414495,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000377.png",
+      "score": 0.09121809481948731,
+      "negative_object_score": 0.0035127622650179546,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000378.png",
+      "score": 0.09957919142414463,
+      "negative_object_score": 0.00016832315725044585,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000379.png",
+      "score": 0.09945785365365131,
+      "negative_object_score": 0.0002168598066115616,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000380.png",
+      "score": 0.08990179122162469,
+      "negative_object_score": 0.004039286333439426,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000381.png",
+      "score": 0.09950274483168565,
+      "negative_object_score": 0.0001989020146841843,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000382.png",
+      "score": 0.09982374328903916,
+      "negative_object_score": 7.050324854844803e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000383.png",
+      "score": 0.09652795994370536,
+      "negative_object_score": 0.0013888149969716324,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000384.png",
+      "score": 0.09953373815736388,
+      "negative_object_score": 0.0001865031874028015,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000385.png",
+      "score": 0.09766491884317172,
+      "negative_object_score": 0.0009340353314958823,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000386.png",
+      "score": 0.09984389283912283,
+      "negative_object_score": 6.243836120442362e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000387.png",
+      "score": 0.09936642802026655,
+      "negative_object_score": 0.0002534309361635678,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000388.png",
+      "score": 0.09949080140078573,
+      "negative_object_score": 0.00020367790264875414,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000389.png",
+      "score": 0.09760489693420217,
+      "negative_object_score": 0.000958040685660914,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000390.png",
+      "score": 0.0995115803035181,
+      "negative_object_score": 0.00019536746723739876,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000391.png",
+      "score": 0.09972188015235588,
+      "negative_object_score": 0.00011124975862912834,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000392.png",
+      "score": 0.09930858332937381,
+      "negative_object_score": 0.00027656907422321335,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000393.png",
+      "score": 0.09668486371689748,
+      "negative_object_score": 0.0013260501710950243,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000394.png",
+      "score": 0.07610341892941506,
+      "negative_object_score": 0.009558630294486647,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000395.png",
+      "score": 0.09898352525318235,
+      "negative_object_score": 0.0004065896837952702,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000396.png",
+      "score": 0.09928639354372233,
+      "negative_object_score": 0.000285439866577993,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000397.png",
+      "score": -0.0007783140579704223,
+      "negative_object_score": 0.040311324159847575,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000398.png",
+      "score": 0.09770031851633879,
+      "negative_object_score": 0.0009198702321252009,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000399.png",
+      "score": 0.0975948395221773,
+      "negative_object_score": 0.0009620656099590027,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000400.png",
+      "score": 0.09848084178616621,
+      "negative_object_score": 0.0006076629584110075,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000401.png",
+      "score": 0.0996312138912155,
+      "negative_object_score": 0.0001475156230033766,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000402.png",
+      "score": 0.0987342970951128,
+      "negative_object_score": 0.0005062799599121112,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000403.png",
+      "score": 0.09884688917633562,
+      "negative_object_score": 0.0004612401712923505,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000404.png",
+      "score": 0.09917980278924005,
+      "negative_object_score": 0.000328071880267089,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000405.png",
+      "score": -0.00985427687798316,
+      "negative_object_score": 0.04394171000846351,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000406.png",
+      "score": 0.0831038505032969,
+      "negative_object_score": 0.006758454515753935,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000407.png",
+      "score": 0.09395185653017203,
+      "negative_object_score": 0.0024192555788734656,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000408.png",
+      "score": -0.026073073611284296,
+      "negative_object_score": 0.050429228918316464,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000409.png",
+      "score": 0.09942469177494787,
+      "negative_object_score": 0.0002301231752426247,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000410.png",
+      "score": 0.09859278530263206,
+      "negative_object_score": 0.0005628869295226953,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000411.png",
+      "score": 0.09772231782969053,
+      "negative_object_score": 0.0009110705652650116,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000412.png",
+      "score": 0.09971850173753107,
+      "negative_object_score": 0.0001125976199394548,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000413.png",
+      "score": 0.09875261196060213,
+      "negative_object_score": 0.0004989523463033644,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000414.png",
+      "score": 0.02263019367431601,
+      "negative_object_score": 0.030947924909802773,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000415.png",
+      "score": 0.09949625916359157,
+      "negative_object_score": 0.0002014976677097972,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000416.png",
+      "score": 0.09934150581256442,
+      "negative_object_score": 0.00026339534661777483,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000417.png",
+      "score": 0.09936302105106733,
+      "negative_object_score": 0.0002547945603510016,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000418.png",
+      "score": 0.09964162773558201,
+      "negative_object_score": 0.0001433539158824715,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000419.png",
+      "score": 0.09729984454903995,
+      "negative_object_score": 0.0010800666189728265,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000420.png",
+      "score": 0.09980604076223093,
+      "negative_object_score": 7.758463947690567e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000421.png",
+      "score": 0.09984423803601886,
+      "negative_object_score": 6.23110588662712e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000422.png",
+      "score": 0.08971646062030535,
+      "negative_object_score": 0.004113417495197306,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000423.png",
+      "score": 0.09766575511422766,
+      "negative_object_score": 0.0009336944774834895,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000424.png",
+      "score": 0.0989473281876902,
+      "negative_object_score": 0.00042107450014251905,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000425.png",
+      "score": 0.09912883972907972,
+      "negative_object_score": 0.00034846051670077335,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000426.png",
+      "score": 0.09799058099899108,
+      "negative_object_score": 0.0008037680220544037,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000427.png",
+      "score": -0.020194228591086962,
+      "negative_object_score": 0.048077687718129404,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000428.png",
+      "score": 0.017541512542326623,
+      "negative_object_score": 0.03298339685619188,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000430.png",
+      "score": 0.07993963816746448,
+      "negative_object_score": 0.008024143082244943,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000431.png",
+      "score": 0.0992601289164213,
+      "negative_object_score": 0.0002959448831916234,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000432.png",
+      "score": 0.09895914722928864,
+      "negative_object_score": 0.0004163399478784413,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000434.png",
+      "score": 0.0964933592263454,
+      "negative_object_score": 0.0014026558123684178,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000435.png",
+      "score": 0.09692141483831923,
+      "negative_object_score": 0.001231433692707166,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000436.png",
+      "score": 0.09952746193115067,
+      "negative_object_score": 0.00018901280169908812,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000437.png",
+      "score": 0.0990699174207369,
+      "negative_object_score": 0.00037203513447063113,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000438.png",
+      "score": 0.09738793929294237,
+      "negative_object_score": 0.001044824198349185,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000440.png",
+      "score": 0.09910743612126681,
+      "negative_object_score": 0.0003570267857867293,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000441.png",
+      "score": 0.09964739420560514,
+      "negative_object_score": 0.0001410422044121636,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000442.png",
+      "score": 0.09955973709948959,
+      "negative_object_score": 0.0001761022831393196,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000443.png",
+      "score": 0.09819873283810618,
+      "negative_object_score": 0.000720504750309677,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000444.png",
+      "score": 0.09910781012428439,
+      "negative_object_score": 0.00035687859356888413,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000445.png",
+      "score": 0.09970588602163086,
+      "negative_object_score": 0.0001176455217394808,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000446.png",
+      "score": 0.09977180071784157,
+      "negative_object_score": 9.128357722450649e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000447.png",
+      "score": 0.09634412653819406,
+      "negative_object_score": 0.0014623480864732604,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000448.png",
+      "score": 0.09868519949974748,
+      "negative_object_score": 0.0005259221534591537,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000449.png",
+      "score": 0.0997157905862006,
+      "negative_object_score": 0.00011368567065422515,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000452.png",
+      "score": 0.07657802963124899,
+      "negative_object_score": 0.009368791301191474,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000453.png",
+      "score": 0.09672264484737146,
+      "negative_object_score": 0.0013109448128185855,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000454.png",
+      "score": 0.09842616410605842,
+      "negative_object_score": 0.0006295331768342294,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000455.png",
+      "score": 0.09840009314466443,
+      "negative_object_score": 0.0006399638416041853,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000456.png",
+      "score": 0.09766433622171462,
+      "negative_object_score": 0.000934266122567351,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000457.png",
+      "score": 0.09967099175344932,
+      "negative_object_score": 0.00013160204027068783,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000458.png",
+      "score": 0.09892929125588429,
+      "negative_object_score": 0.0004282808816393905,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000459.png",
+      "score": 0.09895568456486217,
+      "negative_object_score": 0.0004177281611191574,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000460.png",
+      "score": 0.09969463357673476,
+      "negative_object_score": 0.0001221495072172729,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000461.png",
+      "score": 0.09920906383673961,
+      "negative_object_score": 0.0003163747907213595,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000462.png",
+      "score": 0.09195824713400119,
+      "negative_object_score": 0.003216704833782084,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000463.png",
+      "score": 0.09870933382320193,
+      "negative_object_score": 0.0005162676084789079,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000464.png",
+      "score": 0.08514037396283433,
+      "negative_object_score": 0.005943850232385254,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000465.png",
+      "score": 0.09734804684455109,
+      "negative_object_score": 0.0010607799452676165,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000466.png",
+      "score": 0.09991557699703056,
+      "negative_object_score": 3.377064405564549e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000467.png",
+      "score": 0.09994844960243796,
+      "negative_object_score": 2.0620256633208102e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000468.png",
+      "score": 0.09968885388828995,
+      "negative_object_score": 0.00012445585431350992,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000469.png",
+      "score": 0.09909532568788866,
+      "negative_object_score": 0.000361867222015159,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000470.png",
+      "score": 0.09756561062264761,
+      "negative_object_score": 0.0009737558340323934,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000472.png",
+      "score": 0.09933528105593722,
+      "negative_object_score": 0.0002658839048308437,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000473.png",
+      "score": 0.09979510591376482,
+      "negative_object_score": 8.195788675777749e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000474.png",
+      "score": 0.09983588020587414,
+      "negative_object_score": 6.564542381018631e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000475.png",
+      "score": 0.09624546724177586,
+      "negative_object_score": 0.0015018133669703578,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000477.png",
+      "score": 0.09946016149585071,
+      "negative_object_score": 0.0002159379121015566,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000478.png",
+      "score": 0.09849938652326576,
+      "negative_object_score": 0.0006002416150901505,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000479.png",
+      "score": 0.099941893044335,
+      "negative_object_score": 2.324826546858579e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000480.png",
+      "score": 0.051697929470295396,
+      "negative_object_score": 0.019320830127495962,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000481.png",
+      "score": 0.07587144609424286,
+      "negative_object_score": 0.009651419153669849,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000483.png",
+      "score": 0.09959060434759219,
+      "negative_object_score": 0.00016375328430816202,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000484.png",
+      "score": 0.09691809326116829,
+      "negative_object_score": 0.001232765021874608,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000485.png",
+      "score": 0.09953200262356555,
+      "negative_object_score": 0.00018719760442612217,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000486.png",
+      "score": 0.09988239184248944,
+      "negative_object_score": 4.704334269642156e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000487.png",
+      "score": 0.09969516039304457,
+      "negative_object_score": 0.00012193315747405601,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000488.png",
+      "score": 0.09984399088287244,
+      "negative_object_score": 6.240206268633604e-05,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000489.png",
+      "score": 0.09964225182174384,
+      "negative_object_score": 0.0001430973034151369,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000490.png",
+      "score": 0.08531713208164243,
+      "negative_object_score": 0.00587314621564777,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000491.png",
+      "score": 0.09963152079174052,
+      "negative_object_score": 0.00014738813486019352,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000493.png",
+      "score": 0.09960508093441452,
+      "negative_object_score": 0.00015796629799448662,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000494.png",
+      "score": 0.09884561295822702,
+      "negative_object_score": 0.0004617536536746532,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000495.png",
+      "score": 0.09940212383097181,
+      "negative_object_score": 0.00023914950708482744,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000496.png",
+      "score": 0.09919493807789574,
+      "negative_object_score": 0.0003220266724686856,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000497.png",
+      "score": 0.09813203225624724,
+      "negative_object_score": 0.0007471885228066337,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000498.png",
+      "score": 0.09796450557811719,
+      "negative_object_score": 0.0008141973691939105,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000499.png",
+      "score": 0.09887187258530805,
+      "negative_object_score": 0.0004512487973139893,
+      "accepted_by_threshold": true
+    },
+    {
+      "filename": "000500.png",
+      "score": 0.09959727288521662,
+      "negative_object_score": 0.00016108475094824825,
+      "accepted_by_threshold": true
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "input_count": 470,
+  "accepted_count": 0,
+  "rejected_count": 470,
+  "acceptance_rate": 0.0,
+  "threshold": 0.18,
+  "model_used": "openai/clip-vit-base-patch32",
+  "example_rejections": [
+    {
+      "file_name": "000001.png",
+      "score": 0.09883936240780714,
+      "reason": "semantic_score_below_threshold"
+    },
+    {
+      "file_name": "000002.png",
+      "score": 0.09928059801771572,
+      "reason": "semantic_score_below_threshold"
+    },
+    {
+      "file_name": "000003.png",
+      "score": 0.09420533012950424,
+      "reason": "semantic_score_below_threshold"
+    },
+    {
+      "file_name": "000004.png",
+      "score": 0.09644552690612423,
+      "reason": "semantic_score_below_threshold"
+    },
+    {
+      "file_name": "000005.png",
+      "score": 0.09436720986414002,
+      "reason": "semantic_score_below_threshold"
+    },
+    {
+      "file_name": "000006.png",
+      "score": 0.09227764927442574,
+      "reason": "semantic_score_below_threshold"
+    },
+    {
+      "file_name": "000007.png",
+      "score": 0.09932773845742608,
+      "reason": "semantic_score_below_threshold"
+    },
+    {
+      "file_name": "000008.png",
+      "score": 0.0995966812845154,
+      "reason": "semantic_score_below_threshold"
+    },
+    {
+      "file_name": "000009.png",
+      "score": 0.09975932144448052,
+      "reason": "semantic_score_below_threshold"
+    },
+    {
+      "file_name": "000010.png",
+      "score": 0.0993520922332209,
+      "reason": "semantic_score_below_threshold"
+    }
+  ]
+}

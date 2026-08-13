@@ -5,6 +5,10 @@ function App() {
   const [originalImage, setOriginalImage] = useState("");
   const [removedImage, setRemovedImage] = useState("");
   const [processedImage, setProcessedImage] = useState("");
+  const [prompt, setPrompt] = useState("A pixel art dog running near a tree");
+  const [generatedImage, setGeneratedImage] = useState("");
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [generationError, setGenerationError] = useState("");
 
   const uploadImage = async () => {
     if (!image) {
@@ -27,6 +31,40 @@ function App() {
     setProcessedImage(data.processed);
   };
 
+  const generateCharacter = async () => {
+    if (!prompt.trim()) {
+      setGenerationError("Please enter a prompt before generating.");
+      setGeneratedImage("");
+      return;
+    }
+
+    setIsGenerating(true);
+    setGenerationError("");
+    setGeneratedImage("");
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.detail || "Generation failed.");
+      }
+
+      setGeneratedImage(data.image);
+    } catch (error) {
+      setGenerationError(error.message || "Something went wrong while generating the image.");
+    } finally {
+      setIsGenerating(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 p-10 text-white">
       <h1 className="text-5xl font-bold text-cyan-400 text-center mb-10">
@@ -46,6 +84,46 @@ function App() {
         >
           Upload Image
         </button>
+      </div>
+
+      <div className="mt-12 max-w-2xl mx-auto bg-slate-800 p-6 rounded-lg shadow-lg">
+        <h2 className="text-2xl font-semibold mb-4">AI Character Generation</h2>
+
+        <label className="block text-sm font-medium text-slate-200 mb-2">
+          Prompt
+        </label>
+
+        <textarea
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          placeholder="A pixel art dog running near a tree"
+          className="w-full h-32 p-3 rounded-lg text-slate-900"
+        />
+
+        <button
+          onClick={generateCharacter}
+          disabled={isGenerating}
+          className="mt-4 px-6 py-3 bg-emerald-500 rounded-lg hover:bg-emerald-600 transition disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {isGenerating ? "Generating..." : "Generate Character"}
+        </button>
+
+        {generationError && (
+          <div className="mt-4 p-3 rounded-lg bg-red-900/60 text-red-100">
+            {generationError}
+          </div>
+        )}
+
+        {generatedImage && (
+          <div className="mt-6">
+            <h3 className="text-xl font-semibold mb-3">Generated Character</h3>
+            <img
+              src={generatedImage}
+              alt="Generated character"
+              className="w-full max-w-md rounded-lg shadow-lg border border-slate-700"
+            />
+          </div>
+        )}
       </div>
 
       {removedImage && (

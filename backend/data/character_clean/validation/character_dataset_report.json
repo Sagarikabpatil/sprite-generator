@@ -1,0 +1,10 @@
+{
+  "input_count": 500,
+  "accepted_count": 470,
+  "rejected_count": 30,
+  "rejection_reasons": {
+    "blank_or_faint": 30,
+    "poor_composition": 4
+  },
+  "final_count": 470
+}
