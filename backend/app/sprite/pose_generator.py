@@ -1,24 +1,41 @@
-"""Pose generation utilities for animated sprite creation.
-
-This module will define the logic for producing multiple pose variations from a
-base character asset for animation workflows.
-"""
+"""Coordinate provider-backed animation frame generation."""
 
 from __future__ import annotations
 
-from typing import Any
+from pathlib import Path
+
+from app.sprite.pose_provider import GenerationMetadata, PoseRequest, get_pose_provider
+
+SUPPORTED_ACTIONS = {"idle", "walk", "run", "jump", "attack"}
+DEFAULT_FRAME_COUNT = 8
+FRAMES_FOLDER = Path(__file__).resolve().parents[1] / "generated_frames"
+_last_generation_metadata: GenerationMetadata | None = None
 
 
-def generate_pose(image: Any) -> Any:
-    """Generate a pose variation from a base character image.
+def generate_animation_frames(
+    character_path: str,
+    action: str,
+    frame_count: int = DEFAULT_FRAME_COUNT,
+) -> list[str]:
+    """Generate saved animation frames through the configured pose provider."""
+    if not character_path or not Path(character_path).is_file():
+        raise FileNotFoundError("Processed character image was not found.")
+    if action not in SUPPORTED_ACTIONS:
+        supported = ", ".join(sorted(SUPPORTED_ACTIONS))
+        raise ValueError(f"Unsupported action '{action}'. Choose one of: {supported}.")
+    if isinstance(frame_count, bool) or not 1 <= frame_count <= 64:
+        raise ValueError("frame_count must be an integer between 1 and 64.")
 
-    Future implementation will create or transform the supplied image into a
-    pose-specific sprite variant for animation sequences.
+    global _last_generation_metadata
+    FRAMES_FOLDER.mkdir(parents=True, exist_ok=True)
+    provider = get_pose_provider()
+    frames = provider.generate_frames(
+        PoseRequest(character_path, action, frame_count), FRAMES_FOLDER
+    )
+    _last_generation_metadata = getattr(provider, "last_generation", None)
+    return frames
 
-    Args:
-        image (Any): The base character image.
 
-    Returns:
-        Any: A pose-specific image representation.
-    """
-    pass
+def get_last_generation_metadata() -> GenerationMetadata | None:
+    """Return metadata from the most recent provider-backed generation."""
+    return _last_generation_metadata

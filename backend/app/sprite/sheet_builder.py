@@ -1,24 +1,45 @@
-"""Sprite sheet construction utilities.
-
-This module will be responsible for assembling multiple sprite frames into a
-single coordinated sprite sheet for use in animation systems.
-"""
+"""Build transparent PNG sprite sheets from animation frames."""
 
 from __future__ import annotations
 
-from typing import Any
+import math
+from pathlib import Path
+
+from PIL import Image
 
 
-def build_sheet(frames: list[Any]) -> Any:
-    """Build a sprite sheet from a collection of frames.
+def build_sprite_sheet(frame_paths: list[str], output_path: str, columns: int = 4) -> str:
+    """Arrange equally sized RGBA frames into a transparent grid."""
+    if not frame_paths:
+        raise ValueError("Cannot build a sprite sheet without frames.")
+    if columns < 1:
+        raise ValueError("columns must be at least 1.")
 
-    Future implementation will arrange the supplied frames into a grid or layout
-    suitable for animation rendering and game engine consumption.
+    images: list[Image.Image] = []
+    try:
+        for frame_path in frame_paths:
+            images.append(Image.open(frame_path).convert("RGBA"))
+        frame_size = images[0].size
+        if any(image.size != frame_size for image in images[1:]):
+            raise ValueError("Cannot build a sprite sheet from inconsistent frame dimensions.")
 
-    Args:
-        frames (list[Any]): A sequence of sprite frame images.
+        rows = math.ceil(len(images) / columns)
+        sheet = Image.new("RGBA", (frame_size[0] * columns, frame_size[1] * rows), (0, 0, 0, 0))
+        for index, image in enumerate(images):
+            position = ((index % columns) * frame_size[0], (index // columns) * frame_size[1])
+            sheet.paste(image, position, image)
 
-    Returns:
-        Any: The assembled sprite sheet object.
-    """
-    pass
+        destination = Path(output_path)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        sheet.save(destination, format="PNG")
+        return str(destination)
+    except OSError as exc:
+        raise RuntimeError(f"Failed to build sprite sheet: {exc}") from exc
+    finally:
+        for image in images:
+            image.close()
+
+
+def build_sheet(frames: list[str], output_path: str, columns: int = 4) -> str:
+    """Backward-compatible name for building a sprite sheet."""
+    return build_sprite_sheet(frames, output_path, columns)

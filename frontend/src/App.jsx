@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GeneratedAnimation from "./GeneratedAnimation";
 
 function App() {
   const [image, setImage] = useState(null);
@@ -9,6 +10,11 @@ function App() {
   const [generatedImage, setGeneratedImage] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [generationError, setGenerationError] = useState("");
+  const [action, setAction] = useState("walk");
+  const [frameCount, setFrameCount] = useState(8);
+  const [isGeneratingSprite, setIsGeneratingSprite] = useState(false);
+  const [spriteError, setSpriteError] = useState("");
+  const [animationResult, setAnimationResult] = useState(null);
 
   const uploadImage = async () => {
     if (!image) {
@@ -65,8 +71,45 @@ function App() {
     }
   };
 
+  const generateSprite = async () => {
+    if (!processedImage) {
+      setSpriteError("Upload and process a character image first.");
+      return;
+    }
+
+    setIsGeneratingSprite(true);
+    setSpriteError("");
+    setAnimationResult(null);
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/generate-sprite", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          character_path: processedImage,
+          action,
+          frame_count: Number(frameCount),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.detail || "Sprite generation failed.");
+      }
+
+      setAnimationResult(data);
+    } catch (error) {
+      setSpriteError(error.message || "Something went wrong while generating the animation.");
+    } finally {
+      setIsGeneratingSprite(false);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-slate-900 p-10 text-white">
+    <div className="min-h-screen bg-slate-900 p-5 text-white sm:p-10">
       <h1 className="text-5xl font-bold text-cyan-400 text-center mb-10">
         AI Sprite Generator
       </h1>
@@ -127,7 +170,7 @@ function App() {
       </div>
 
       {removedImage && (
-        <div className="grid grid-cols-3 gap-10 mt-12">
+        <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-10 md:grid-cols-3">
           {/* Original Image */}
           <div>
             <h2 className="text-xl mb-4 text-center">Original</h2>
@@ -163,6 +206,79 @@ function App() {
           </div>
         </div>
       )}
+
+      <section className="mx-auto mt-12 max-w-6xl rounded-2xl border border-slate-700 bg-slate-800 p-6 shadow-lg sm:p-8">
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300">
+              MiniMax animation
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold">Generate Sprite</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300">
+              Use the processed character image to create a complete animation preview and sprite sheet.
+            </p>
+          </div>
+          <span className="rounded-full bg-slate-700 px-3 py-1 text-xs text-slate-300">
+            {processedImage ? "Character ready" : "Upload a character first"}
+          </span>
+        </div>
+
+        <div className="mt-6 grid gap-4 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
+          <label className="text-sm font-medium text-slate-200">
+            Action
+            <select
+              value={action}
+              onChange={(event) => setAction(event.target.value)}
+              disabled={isGeneratingSprite}
+              className="mt-2 w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-3 text-white outline-none focus:border-cyan-400"
+            >
+              {['idle', 'walk', 'run', 'jump', 'attack'].map((option) => (
+                <option key={option} value={option}>
+                  {option.charAt(0).toUpperCase() + option.slice(1)}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="text-sm font-medium text-slate-200">
+            Frame count
+            <select
+              value={frameCount}
+              onChange={(event) => setFrameCount(Number(event.target.value))}
+              disabled={isGeneratingSprite}
+              className="mt-2 w-full rounded-lg border border-slate-600 bg-slate-900 px-3 py-3 text-white outline-none focus:border-cyan-400"
+            >
+              {[4, 8, 12, 16].map((count) => (
+                <option key={count} value={count}>
+                  {count} frames
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <button
+            onClick={generateSprite}
+            disabled={isGeneratingSprite || !processedImage}
+            className="rounded-lg bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-400 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            {isGeneratingSprite ? "Generating animation..." : "Generate Sprite"}
+          </button>
+        </div>
+
+        {isGeneratingSprite && (
+          <div className="mt-5 rounded-lg border border-cyan-400/30 bg-cyan-400/10 p-4 text-cyan-100">
+            Generating animation...
+          </div>
+        )}
+
+        {spriteError && (
+          <div className="mt-5 rounded-lg border border-red-400/30 bg-red-900/50 p-4 text-red-100" role="alert">
+            {spriteError}
+          </div>
+        )}
+
+        {animationResult && <GeneratedAnimation result={animationResult} />}
+      </section>
     </div>
   );
 }
