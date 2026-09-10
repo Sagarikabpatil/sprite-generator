@@ -1,0 +1,30 @@
+{
+  "catalog_version": "1.0",
+  "status": "seed_catalog_only",
+  "records": [
+    {
+      "id": "seed-character-warrior-pixel-art",
+      "name": "Warrior character seed",
+      "category": "characters",
+      "subcategory": "warrior",
+      "style": "pixel_art",
+      "tags": ["character", "warrior", "full_body", "game_asset"],
+      "actions": ["idle", "walk", "run", "attack"],
+      "source": "prompt vocabulary seed; no bundled image",
+      "artist": "SpriteForge project",
+      "license": "CC0-compatible metadata seed; replace with asset-specific license when adding media"
+    },
+    {
+      "id": "seed-environment-forest-pixel-art",
+      "name": "Forest environment seed",
+      "category": "environments",
+      "subcategory": "forest",
+      "style": "pixel_art",
+      "tags": ["environment", "forest", "game_asset"],
+      "actions": [],
+      "source": "prompt vocabulary seed; no bundled image",
+      "artist": "SpriteForge project",
+      "license": "CC0-compatible metadata seed; replace with asset-specific license when adding media"
+    }
+  ]
+}

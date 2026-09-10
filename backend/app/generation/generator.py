@@ -7,6 +7,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from app.generation.pollinations_client import generate_image
+from app.generation.prompt_catalog import enrich_prompt
 
 GENERATED_FOLDER = Path(__file__).resolve().parents[1] / "generated"
 GENERATED_FOLDER.mkdir(parents=True, exist_ok=True)
@@ -17,7 +18,7 @@ def generate_character(prompt: str) -> str:
     if not isinstance(prompt, str) or not prompt.strip():
         raise ValueError("Prompt cannot be empty.")
 
-    sanitized_prompt = prompt.strip()
+    sanitized_prompt = enrich_prompt(prompt)
 
     try:
         image_bytes, content_type = generate_image(sanitized_prompt)

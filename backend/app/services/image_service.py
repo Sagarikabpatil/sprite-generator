@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import os
 import shutil
+from pathlib import Path
 from typing import Any
 
 from fastapi import UploadFile
@@ -18,6 +19,37 @@ try:
 except ImportError:
     from preprocessing.background import remove_background
     from preprocessing.preprocess import preprocess_character
+
+
+APP_DIR = Path(__file__).resolve().parents[1]
+UPLOAD_FOLDER = APP_DIR / "uploads"
+PROCESSED_FOLDER = APP_DIR / "processed"
+
+
+def process_image_path(input_path: str | Path, source_name: str) -> dict[str, str | Path]:
+    """Run background removal and preprocessing for an existing image file."""
+    source_path = Path(input_path)
+    if not source_path.is_file():
+        raise FileNotFoundError(f"Source character image was not found: {source_path}")
+
+    UPLOAD_FOLDER.mkdir(parents=True, exist_ok=True)
+    PROCESSED_FOLDER.mkdir(parents=True, exist_ok=True)
+
+    stem = Path(source_name).stem
+    removed_filename = f"no_bg_{stem}.png"
+    processed_filename = f"processed_{stem}.png"
+    removed_path = UPLOAD_FOLDER / removed_filename
+    processed_path = PROCESSED_FOLDER / processed_filename
+
+    remove_background(str(source_path), str(removed_path))
+    preprocess_character(str(removed_path), str(processed_path))
+
+    return {
+        "removed_path": removed_path,
+        "processed_path": processed_path,
+        "removed_url": f"http://127.0.0.1:8000/uploads/{removed_filename}",
+        "processed_url": f"http://127.0.0.1:8000/processed/{processed_filename}",
+    }
 
 
 def process_uploaded_image(file: UploadFile) -> dict[str, str]:
@@ -35,27 +67,16 @@ def process_uploaded_image(file: UploadFile) -> dict[str, str]:
         dict[str, str]: A response payload containing the original, removed, and
             processed image URLs.
     """
-    upload_folder = "app/uploads"
-    processed_folder = "app/processed"
+    UPLOAD_FOLDER.mkdir(parents=True, exist_ok=True)
+    file_path = UPLOAD_FOLDER / file.filename
 
-    os.makedirs(upload_folder, exist_ok=True)
-    os.makedirs(processed_folder, exist_ok=True)
-
-    file_path = os.path.join(upload_folder, file.filename)
-
-    with open(file_path, "wb") as buffer:
+    with file_path.open("wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
 
-    output_filename = f"no_bg_{os.path.splitext(file.filename)[0]}.png"
-    output_path = os.path.join(upload_folder, output_filename)
-    remove_background(file_path, output_path)
-
-    processed_filename = f"processed_{os.path.splitext(file.filename)[0]}.png"
-    processed_path = os.path.join(processed_folder, processed_filename)
-    preprocess_character(output_path, processed_path)
+    processed = process_image_path(file_path, file.filename)
 
     return {
         "original": f"http://127.0.0.1:8000/uploads/{file.filename}",
-        "removed": f"http://127.0.0.1:8000/uploads/{output_filename}",
-        "processed": f"http://127.0.0.1:8000/processed/{processed_filename}",
+        "removed": str(processed["removed_url"]),
+        "processed": str(processed["processed_url"]),
     }

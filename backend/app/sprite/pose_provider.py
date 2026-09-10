@@ -11,6 +11,7 @@ from typing import Protocol
 from uuid import uuid4
 
 from app.sprite.video_frames import extract_video_frames
+from app.sprite.action_taxonomy import get_action
 
 try:
     from gradio_client import Client, handle_file
@@ -26,6 +27,7 @@ class PoseRequest:
     character_path: str
     action: str
     frame_count: int
+    prompt: str | None = None
 
 
 class PoseProvider(Protocol):
@@ -107,8 +109,9 @@ class HuggingFaceAnimationProvider:
         self.last_generation: GenerationMetadata | None = None
 
     @staticmethod
-    def _prompt(action: str) -> str:
-        motion = ACTION_PROMPTS[action]
+    def _prompt(action: str, motion_override: str | None = None) -> str:
+        action_definition = get_action(action)
+        motion = motion_override or action_definition["prompt"]
         return (
             f"Create a clean 2D game sprite animation of the provided character {motion}. "
             "Keep the character identity, clothing, colors, proportions and art style "
@@ -121,13 +124,15 @@ class HuggingFaceAnimationProvider:
         character_path = Path(request.character_path)
         if not character_path.is_file():
             raise FileNotFoundError(f"Character image was not found: {character_path}")
-        if request.action not in ACTION_PROMPTS:
-            raise PoseProviderError(f"Unsupported animation action: {request.action}")
+        try:
+            action_definition = get_action(request.action)
+        except ValueError as exc:
+            raise PoseProviderError(str(exc)) from exc
 
         try:
             image_input = handle_file(character_path)
             output_video, report, refined_prompt = self.client.predict(
-                self._prompt(request.action),
+                self._prompt(request.action, request.prompt),
                 image_input,
                 image_input,
                 self.canvas,
@@ -150,7 +155,7 @@ class HuggingFaceAnimationProvider:
 
         video_dir = output_dir.parent / "generated" / "videos"
         video_dir.mkdir(parents=True, exist_ok=True)
-        destination = video_dir / f"animation_{request.action}_{uuid4().hex}.mp4"
+        destination = video_dir / f"animation_{action_definition['value']}_{uuid4().hex}.mp4"
         try:
             shutil.copy2(str(output_video), destination)
         except OSError as exc:
