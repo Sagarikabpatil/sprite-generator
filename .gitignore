@@ -51,3 +51,9 @@ backend/data/lora_output/
 !backend/data/clean/metadata/
 !backend/data/validation/
 !backend/training/
+
+# Generated AI assets
+backend/app/generated/
+backend/app/generated_frames/
+backend/app/processed/
+backend/app/sprite_sheets/
