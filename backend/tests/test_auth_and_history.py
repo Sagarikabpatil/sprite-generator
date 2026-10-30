@@ -268,7 +268,9 @@ def test_failed_generation_does_not_record_successful_asset_or_history(
     assert client.get("/history", headers=auth(account["token"])).json() == []
 
 
-def test_failed_animation_does_not_record_output_assets_or_history(isolated_client, monkeypatch):
+def test_failed_animation_records_failure_in_history_without_output_assets(
+    isolated_client, monkeypatch
+):
     client, main, folders = isolated_client
     account = create_user(client)
     character = folders["PROCESSED_FOLDER"] / "source.png"
@@ -286,9 +288,14 @@ def test_failed_animation_does_not_record_output_assets_or_history(isolated_clie
     )
 
     assert response.status_code == 502
-    assert len(client.get("/assets", headers=auth(account["token"])).json()) == 1
-    assert client.get("/history", headers=auth(account["token"])).json() == []
 
+    assets = client.get("/assets", headers=auth(account["token"])).json()
+    assert len(assets) == 1
+
+    history = client.get("/history", headers=auth(account["token"])).json()
+    assert len(history) == 1
+    assert history[0]["status"] == "failed"
+    assert history[0]["action"] == "walk"
 
 @pytest.mark.parametrize(
     ("character_path", "expected_status"),
@@ -304,6 +311,7 @@ def test_sprite_generation_rejects_missing_or_invalid_asset_before_provider(
     client, main, _ = isolated_client
     account = create_user(client)
     provider_calls = []
+
     monkeypatch.setattr(
         main,
         "generate_sprite",

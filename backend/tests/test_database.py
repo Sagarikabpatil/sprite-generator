@@ -1,3 +1,4 @@
+import ssl
 import sqlite3
 import sys
 from types import ModuleType, SimpleNamespace
@@ -20,6 +21,34 @@ def test_database_configuration_defaults_to_sqlite(tmp_path):
 
     assert config.engine == "sqlite"
     assert config.sqlite_path == tmp_path / "app.sqlite"
+
+
+def test_database_configuration_requires_explicit_engine_in_production(tmp_path):
+    with pytest.raises(DatabaseConfigurationError, match="Production deployments"):
+        DatabaseConfig.from_env(
+            {},
+            default_sqlite_path=tmp_path / "app.sqlite",
+            require_explicit_engine=True,
+        )
+
+    config = DatabaseConfig.from_env(
+        {"ASSETAI_DB_ENGINE": "sqlite"},
+        default_sqlite_path=tmp_path / "app.sqlite",
+        require_explicit_engine=True,
+    )
+    assert config.engine == "sqlite"
+
+
+@pytest.mark.parametrize(
+    ("name", "value"),
+    [("RENDER", "true"), ("ASSETAI_ENV", "production")],
+)
+def test_production_environment_is_detected(monkeypatch, name, value):
+    from app.main import _is_production_environment
+
+    monkeypatch.setenv(name, value)
+
+    assert _is_production_environment()
 
 
 def test_database_configuration_accepts_explicit_sqlite_path(tmp_path):
@@ -57,6 +86,7 @@ def test_database_configuration_selects_mysql_only_when_explicit():
             "ASSETAI_MYSQL_DATABASE": "assetai_test",
         },
         default_sqlite_path=Path("app.sqlite"),
+        require_explicit_engine=True,
     )
 
     assert config.engine == "mysql"
@@ -65,6 +95,64 @@ def test_database_configuration_selects_mysql_only_when_explicit():
     assert config.mysql_user == "assetai"
     assert config.mysql_database == "assetai_test"
     assert "test-password" not in repr(config)
+
+
+def test_mysql_ssl_ca_creates_verified_context_and_passes_it_to_pymysql(
+    monkeypatch, tmp_path
+):
+    ca_file = tmp_path / "ca.pem"
+    ca_file.write_text("test CA", encoding="utf-8")
+    cafile_arguments = []
+    real_create_default_context = ssl.create_default_context
+
+    def create_ssl_context(*, cafile):
+        cafile_arguments.append(cafile)
+        return real_create_default_context()
+
+    monkeypatch.setattr(ssl, "create_default_context", create_ssl_context)
+    connect_options = {}
+    fake_pymysql = ModuleType("pymysql")
+    fake_pymysql.MySQLError = type("MySQLError", (Exception,), {})
+    fake_pymysql.cursors = SimpleNamespace(DictCursor=object())
+    fake_pymysql.connect = lambda **kwargs: connect_options.update(kwargs) or object()
+    monkeypatch.setitem(sys.modules, "pymysql", fake_pymysql)
+
+    config = DatabaseConfig.from_env(
+        {
+            "ASSETAI_DB_ENGINE": "mysql",
+            "ASSETAI_MYSQL_HOST": "mysql.example",
+            "ASSETAI_MYSQL_USER": "assetai",
+            "ASSETAI_MYSQL_PASSWORD": "test-password",
+            "ASSETAI_MYSQL_DATABASE": "assetai",
+            "ASSETAI_MYSQL_SSL_CA": str(ca_file),
+        },
+        default_sqlite_path=Path("unused.sqlite"),
+    )
+    connect_database(config)
+
+    assert cafile_arguments == [str(ca_file), str(ca_file)]
+    assert connect_options["ssl"].verify_mode == ssl.CERT_REQUIRED
+    assert connect_options["ssl"].check_hostname
+
+
+@pytest.mark.parametrize("ca_contents", [None, "not a certificate"])
+def test_mysql_ssl_ca_rejects_missing_or_invalid_files(tmp_path, ca_contents):
+    ca_file = tmp_path / "invalid-ca.pem"
+    if ca_contents is not None:
+        ca_file.write_text(ca_contents, encoding="utf-8")
+
+    with pytest.raises(DatabaseConfigurationError, match="valid CA certificate file"):
+        DatabaseConfig.from_env(
+            {
+                "ASSETAI_DB_ENGINE": "mysql",
+                "ASSETAI_MYSQL_HOST": "mysql.example",
+                "ASSETAI_MYSQL_USER": "assetai",
+                "ASSETAI_MYSQL_PASSWORD": "test-password",
+                "ASSETAI_MYSQL_DATABASE": "assetai",
+                "ASSETAI_MYSQL_SSL_CA": str(ca_file),
+            },
+            default_sqlite_path=Path("unused.sqlite"),
+        )
 
 
 def test_database_configuration_rejects_unknown_engine():
@@ -188,6 +276,7 @@ def test_mysql_connection_factory_uses_dict_cursors_and_utc_session(monkeypatch)
     assert connect_options["database"] == "assetai"
     assert connect_options["autocommit"] is False
     assert connect_options["init_command"] == "SET time_zone = '+00:00'"
+    assert "ssl" not in connect_options
     assert fake_connection.commits == 1
     assert fake_connection.rollbacks == 0
     assert fake_connection.closed

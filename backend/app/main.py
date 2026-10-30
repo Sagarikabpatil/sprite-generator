@@ -34,24 +34,67 @@ from app.services.sprite_service import generate_sprite
 from app.sprite.action_taxonomy import ACTION_GROUPS, get_action
 from app.sprite.pose_provider import PoseProviderError, PoseProviderNotConfiguredError
 
+BASE_DIR = Path(__file__).resolve().parents[1]
+APP_DIR = Path(__file__).resolve().parent
+load_dotenv(BASE_DIR / ".env")
+
+
+def _is_production_environment() -> bool:
+    return (
+        os.environ.get("RENDER", "").strip().lower() == "true"
+        or os.environ.get("ASSETAI_ENV", "").strip().lower() == "production"
+    )
+
+
+def configure_cors(application: FastAPI) -> None:
+    is_production = _is_production_environment()
+    frontend_origin = os.environ.get("ASSETAI_FRONTEND_ORIGIN", "").strip()
+    allowed_origins = [] if is_production else ["http://localhost:5173"]
+    if frontend_origin:
+        frontend_origin = frontend_origin.rstrip("/")
+        parsed_origin = urlparse(frontend_origin)
+        try:
+            parsed_origin.port
+        except ValueError as exc:
+            raise ValueError(
+                "ASSETAI_FRONTEND_ORIGIN must be a valid HTTP(S) origin."
+            ) from exc
+        if (
+            "*" in frontend_origin
+            or any(character.isspace() for character in frontend_origin)
+            or parsed_origin.scheme not in {"http", "https"}
+            or not parsed_origin.hostname
+            or parsed_origin.username is not None
+            or parsed_origin.password is not None
+            or parsed_origin.path
+            or parsed_origin.query
+            or parsed_origin.fragment
+        ):
+            raise ValueError(
+                "ASSETAI_FRONTEND_ORIGIN must be a single HTTP(S) origin without "
+                "a path, query, fragment, credentials, or wildcard."
+            )
+        if frontend_origin not in allowed_origins:
+            allowed_origins.append(frontend_origin)
+
+    application.add_middleware(
+        CORSMiddleware,
+        allow_origins=allowed_origins,
+        allow_origin_regex=(
+            None if is_production else r"https?://(localhost|127\.0\.0\.1)(:\d+)?"
+        ),
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+        expose_headers=["X-Asset-Filename"],
+    )
+
 app = FastAPI(
     title="AI Animation Sprite Generator API",
     version="1.0.0"
 )
+configure_cors(app)
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
-    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1)(:\d+)?",
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-    expose_headers=["X-Asset-Filename"],
-)
-
-BASE_DIR = Path(__file__).resolve().parents[1]
-APP_DIR = Path(__file__).resolve().parent
-load_dotenv(BASE_DIR / ".env")
 UPLOAD_FOLDER = BASE_DIR / "uploads"
 PROCESSED_FOLDER = APP_DIR / "processed"
 GENERATED_FOLDER = APP_DIR / "generated"
@@ -59,7 +102,10 @@ GENERATED_FRAMES_FOLDER = APP_DIR / "generated_frames"
 SPRITE_SHEETS_FOLDER = APP_DIR / "sprite_sheets"
 GENERATED_VIDEOS_FOLDER = APP_DIR / "generated" / "videos"
 DB_PATH = Path(os.environ.get("ASSETAI_DB_PATH", BASE_DIR / "app.db"))
-DB_CONFIG = DatabaseConfig.from_env(default_sqlite_path=DB_PATH)
+DB_CONFIG = DatabaseConfig.from_env(
+    default_sqlite_path=DB_PATH,
+    require_explicit_engine=_is_production_environment(),
+)
 
 UPLOAD_FOLDER.mkdir(parents=True, exist_ok=True)
 PROCESSED_FOLDER.mkdir(parents=True, exist_ok=True)

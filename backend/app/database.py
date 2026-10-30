@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import ssl
 import sqlite3
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -30,6 +31,7 @@ class DatabaseConfig:
     mysql_user: str = ""
     mysql_password: str = field(default="", repr=False)
     mysql_database: str = ""
+    mysql_ssl_ca: Path | None = None
 
     @classmethod
     def from_env(
@@ -37,9 +39,15 @@ class DatabaseConfig:
         env: Mapping[str, str] | None = None,
         *,
         default_sqlite_path: Path,
+        require_explicit_engine: bool = False,
     ) -> "DatabaseConfig":
         values = os.environ if env is None else env
         engine_value = (values.get("ASSETAI_DB_ENGINE") or "").strip() or None
+        if require_explicit_engine and engine_value is None:
+            raise DatabaseConfigurationError(
+                "Production deployments must set ASSETAI_DB_ENGINE explicitly "
+                "to either 'sqlite' or 'mysql'."
+            )
         mysql_keys = (
             "ASSETAI_MYSQL_HOST",
             "ASSETAI_MYSQL_PORT",
@@ -88,6 +96,11 @@ class DatabaseConfig:
                 "ASSETAI_MYSQL_PORT must be between 1 and 65535."
             )
 
+        mysql_ssl_ca_value = (values.get("ASSETAI_MYSQL_SSL_CA") or "").strip()
+        mysql_ssl_ca = Path(mysql_ssl_ca_value) if mysql_ssl_ca_value else None
+        if mysql_ssl_ca is not None:
+            _create_mysql_ssl_context(mysql_ssl_ca)
+
         return cls(
             engine="mysql",
             sqlite_path=Path(values.get("ASSETAI_DB_PATH", default_sqlite_path)),
@@ -96,6 +109,7 @@ class DatabaseConfig:
             mysql_user=values["ASSETAI_MYSQL_USER"],
             mysql_password=values["ASSETAI_MYSQL_PASSWORD"],
             mysql_database=values["ASSETAI_MYSQL_DATABASE"],
+            mysql_ssl_ca=mysql_ssl_ca,
         )
 
 
@@ -253,20 +267,32 @@ def connect_database(
             raise DatabaseConfigurationError(
                 "PyMySQL is required when ASSETAI_DB_ENGINE=mysql."
             ) from exc
+        connect_options = {
+            "host": config.mysql_host,
+            "port": config.mysql_port,
+            "user": config.mysql_user,
+            "password": config.mysql_password,
+            "database": config.mysql_database,
+            "charset": "utf8mb4",
+            "cursorclass": pymysql.cursors.DictCursor,
+            "autocommit": False,
+            "init_command": "SET time_zone = '+00:00'",
+        }
+        if config.mysql_ssl_ca is not None:
+            connect_options["ssl"] = _create_mysql_ssl_context(config.mysql_ssl_ca)
         try:
-            connection = pymysql.connect(
-                host=config.mysql_host,
-                port=config.mysql_port,
-                user=config.mysql_user,
-                password=config.mysql_password,
-                database=config.mysql_database,
-                charset="utf8mb4",
-                cursorclass=pymysql.cursors.DictCursor,
-                autocommit=False,
-                init_command="SET time_zone = '+00:00'",
-            )
+            connection = pymysql.connect(**connect_options)
         except pymysql.MySQLError as exc:
             raise DatabaseError("Could not connect to the configured MySQL database.") from exc
         return DatabaseConnection(connection, "mysql")
 
     raise DatabaseConfigurationError(f"Unsupported database engine: {config.engine}")
+
+
+def _create_mysql_ssl_context(ca_file: Path) -> ssl.SSLContext:
+    try:
+        return ssl.create_default_context(cafile=str(ca_file))
+    except (OSError, ssl.SSLError, ValueError) as exc:
+        raise DatabaseConfigurationError(
+            f"ASSETAI_MYSQL_SSL_CA must point to a valid CA certificate file: {ca_file}"
+        ) from exc

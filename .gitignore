@@ -65,3 +65,4 @@ backend/uploads/
 backend/test_auth_history.txt
 frontend/build.txt
 frontend/lint.txt
+backend/ca.pem
