@@ -15,6 +15,7 @@ def validate_generated_frames(frame_paths: list[str]) -> list[str]:
 
     validated: list[str] = []
     dimensions = None
+    previous_signature: bytes | None = None
     for frame_path in frame_paths:
         path = Path(frame_path)
         if not path.is_file():
@@ -24,12 +25,32 @@ def validate_generated_frames(frame_paths: list[str]) -> list[str]:
                 image.verify()
             with Image.open(path) as image:
                 current_dimensions = image.size
+                rgba = image.convert("RGBA")
+                alpha = rgba.getchannel("A")
+                rgb = rgba.convert("RGB")
+                extrema = rgb.getextrema()
+                signature_image = rgb.resize((32, 32), Image.Resampling.BILINEAR).convert("L")
+                signature = signature_image.tobytes()
         except (OSError, ValueError) as exc:
             raise ValueError(f"Generated frame is not a readable image: {path.name}") from exc
         if dimensions is None:
             dimensions = current_dimensions
         elif current_dimensions != dimensions:
             raise ValueError("Generated frames have inconsistent dimensions.")
+        if alpha.getbbox() is None or all(high - low <= 2 for low, high in extrema):
+            raise ValueError(f"Generated animation contains a blank frame: {path.name}")
+        if previous_signature is not None:
+            mean_difference = sum(
+                abs(previous - current)
+                for previous, current in zip(previous_signature, signature)
+            ) / len(signature)
+            if mean_difference < 0.15:
+                raise ValueError("Generated animation contains consecutive nearly identical frames.")
+        alpha.close()
+        rgba.close()
+        rgb.close()
+        signature_image.close()
+        previous_signature = signature
         validated.append(str(path))
     return validated
 

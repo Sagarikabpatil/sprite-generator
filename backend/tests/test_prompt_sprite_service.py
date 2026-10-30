@@ -1,9 +1,7 @@
 from pathlib import Path
 
 import pytest
-from fastapi.testclient import TestClient
 
-from app.main import app
 from app.services import prompt_sprite_service
 
 
@@ -43,34 +41,49 @@ def test_prompt_sprite_orchestrates_generation_preprocessing_and_animation(monke
     assert result["action"] == "sword_slash"
 
 
-def test_prompt_sprite_endpoint_returns_pipeline_urls(monkeypatch, tmp_path: Path):
-    sheet = tmp_path / "sheet.png"
-    sheet.write_bytes(b"sheet")
+def test_prompt_sprite_endpoint_returns_owned_pipeline_urls(isolated_client, monkeypatch):
+    client, main, folders = isolated_client
+    signup = client.post(
+        "/auth/signup",
+        json={"email": "prompt-endpoint@example.com", "password": "StrongPass!123"},
+    )
+    token = signup.json()["token"]
+    generated = folders["GENERATED_FOLDER"] / "character.png"
+    processed = folders["PROCESSED_FOLDER"] / "processed_character.png"
+    frame = folders["GENERATED_FRAMES_FOLDER"] / "frame_000.png"
+    sheet = folders["SPRITE_SHEETS_FOLDER"] / "sheet.png"
+    for path in (generated, processed, frame, sheet):
+        path.write_bytes(b"test asset")
     monkeypatch.setattr(
-        "app.main.generate_sprite_from_prompt",
+        main,
+        "generate_sprite_from_prompt",
         lambda prompt, action, frame_count: {
             "prompt": prompt,
             "action": action,
             "frame_count": frame_count,
-            "generated_character_url": "http://127.0.0.1:8000/generated/character.png",
-            "processed_character_url": "http://127.0.0.1:8000/processed/processed_character.png",
-            "frames": [],
+            "generated_character_path": generated,
+            "processed_character_path": processed,
+            "frames": [str(frame)],
             "sprite_sheet": str(sheet),
             "generated_video": None,
             "provider": "test-provider",
         },
     )
 
-    response = TestClient(app).post(
+    response = client.post(
         "/generate-sprite-from-prompt",
+        headers={"Authorization": f"Bearer {token}"},
         json={"prompt": "warrior", "action": "sword_slash", "frame_count": 8},
     )
 
     assert response.status_code == 200
     payload = response.json()
-    assert payload["generated_character_url"].endswith("/generated/character.png")
-    assert payload["processed_character_url"].endswith("/processed/processed_character.png")
+    assert payload["generated_character_url"].startswith("/assets/")
+    assert payload["processed_character_url"].startswith("/assets/")
+    assert payload["frames"][0].startswith("/assets/")
+    assert payload["sprite_sheet"].startswith("/assets/")
     assert payload["video"] is None
+    assert client.get(payload["sprite_sheet"], headers={"Authorization": f"Bearer {token}"}).status_code == 200
 
 
 @pytest.mark.parametrize("failure", ["character", "preprocessing", "animation"])

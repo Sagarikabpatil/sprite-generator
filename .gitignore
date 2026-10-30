@@ -57,3 +57,11 @@ backend/app/generated/
 backend/app/generated_frames/
 backend/app/processed/
 backend/app/sprite_sheets/
+# Local database and user data
+backend/app.db
+backend/uploads/
+
+# Local test and build outputs
+backend/test_auth_history.txt
+frontend/build.txt
+frontend/lint.txt

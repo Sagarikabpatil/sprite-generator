@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from uuid import uuid4
 
 import cv2
 
@@ -27,7 +28,10 @@ def extract_video_frames(video_path: Path, output_dir: Path, frame_count: int) -
                 break
             if frame is None or frame.size == 0:
                 continue
-            frames.append(cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA))
+            if frame.ndim != 3 or frame.shape[2] not in (3, 4):
+                raise ValueError("Generated video contains an unsupported frame format.")
+            conversion = cv2.COLOR_BGRA2RGBA if frame.shape[2] == 4 else cv2.COLOR_BGR2RGBA
+            frames.append(cv2.cvtColor(frame, conversion))
     finally:
         capture.release()
 
@@ -45,8 +49,9 @@ def extract_video_frames(video_path: Path, output_dir: Path, frame_count: int) -
     ]
     output_dir.mkdir(parents=True, exist_ok=True)
     output_paths: list[str] = []
+    generation_id = uuid4().hex
     for index, frame_index in enumerate(selected_indices):
-        output_path = output_dir / f"frame_{index:03d}.png"
+        output_path = output_dir / f"frame_{generation_id}_{index:03d}.png"
         if not cv2.imwrite(str(output_path), cv2.cvtColor(frames[frame_index], cv2.COLOR_RGBA2BGRA)):
             raise OSError(f"Failed to save extracted frame: {output_path.name}")
         output_paths.append(str(output_path))

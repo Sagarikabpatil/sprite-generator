@@ -115,9 +115,10 @@ class HuggingFaceAnimationProvider:
         return (
             f"Create a clean 2D game sprite animation of the provided character {motion}. "
             "Keep the character identity, clothing, colors, proportions and art style "
-            "consistent throughout the animation. Keep the camera fixed and the character "
-            "centered. Use a simple transparent-looking/clean background suitable for "
-            "extracting game sprite frames. Do not change the user's character design."
+            "consistent throughout every frame. Keep the camera fixed, preserve the full "
+            "character in frame, and use one plain, uniform background throughout the clip "
+            "for reliable frame extraction. Do not add captions, watermarks, scene changes, "
+            "or redesign the user's character."
         )
 
     def generate_frames(self, request: PoseRequest, output_dir: Path) -> list[str]:
